@@ -1,0 +1,18 @@
+{
+  "name": "Моніторинг рухових здібностей",
+  "short_name": "MotorTest",
+  "description": "PWA для моніторингу та оцінювання рухових здібностей студентів вищої фізкультурної освіти",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f3f8f6",
+  "theme_color": "#0f766e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

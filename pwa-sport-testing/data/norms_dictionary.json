@@ -1,0 +1,5282 @@
+[
+  {
+    "test_id":"speed_flying_30m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_flying_30m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":3.61,
+    "max_result":3.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_flying_30m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":3.91,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_flying_30m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_flying_30m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":3.91,
+    "max_result":4.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_flying_30m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":4.11,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_30m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_30m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":4.11,
+    "max_result":4.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_30m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":4.41,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_30m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_30m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.31,
+    "max_result":5.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_30m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_60m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":8.2,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_60m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":8.21,
+    "max_result":8.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_60m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":8.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_60m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_60m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":9.01,
+    "max_result":9.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_60m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":9.61,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_quick_feet_ladder",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":9.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_quick_feet_ladder",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":9.31,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_quick_feet_ladder",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":11.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_quick_feet_ladder",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_quick_feet_ladder",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":10.01,
+    "max_result":12.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_quick_feet_ladder",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":12.41,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_reaction_ruler",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":13.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_reaction_ruler",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":13.1,
+    "max_result":16.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_reaction_ruler",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":16.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_reaction_ruler",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":15.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_reaction_ruler",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":15.1,
+    "max_result":18.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_reaction_ruler",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":18.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_5m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":0.97,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_5m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":0.98,
+    "max_result":1.24,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_5m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":1.25,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_5m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":1.15,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_5m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.16,
+    "max_result":1.48,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_5m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":1.49,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_slalom_30m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_slalom_30m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":4.81,
+    "max_result":5.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_slalom_30m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":5.31,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_slalom_30m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_slalom_30m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.71,
+    "max_result":6.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_slalom_30m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":6.71,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_stair_run",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":1.48,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_stair_run",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1.27,
+    "max_result":1.47,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_stair_run",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1.26,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_stair_run",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":1.33,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_stair_run",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.06,
+    "max_result":1.32,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_stair_run",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1.05,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_max_dist_6s",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":48.61,
+    "max_result":999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_max_dist_6s",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":41.86,
+    "max_result":48.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_max_dist_6s",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":41.85,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_max_dist_6s",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":36.01,
+    "max_result":999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_max_dist_6s",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":31.03,
+    "max_result":36.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_max_dist_6s",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":31.02,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_shuttle_4x9m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":9.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_shuttle_4x9m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":9.31,
+    "max_result":9.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_shuttle_4x9m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":9.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_shuttle_4x9m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":10.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_shuttle_4x9m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":10.41,
+    "max_result":10.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_shuttle_4x9m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":10.91,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_balke_15min",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":3501.0,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_balke_15min",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":2900.0,
+    "max_result":3500.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_balke_15min",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":2899.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_balke_15min",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":3186.0,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_balke_15min",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":2639.0,
+    "max_result":3185.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_balke_15min",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":2638.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_shuttle_300y",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":50.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_shuttle_300y",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":50.1,
+    "max_result":55.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_shuttle_300y",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":55.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_shuttle_300y",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":58.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_shuttle_300y",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":58.1,
+    "max_result":63.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_shuttle_300y",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":63.9,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_rast_35m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_rast_35m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":5.01,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_rast_35m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":10.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_rast_35m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_rast_35m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":3.51,
+    "max_result":7.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_rast_35m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":7.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_yoyo_recovery",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":47.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_yoyo_recovery",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":19.0,
+    "max_result":46.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_yoyo_recovery",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":18.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_yoyo_recovery",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":37.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_yoyo_recovery",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":29.0,
+    "max_result":36.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_yoyo_recovery",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":28.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_pwc170_field",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":3.21,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_pwc170_field",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":2.81,
+    "max_result":3.2,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_pwc170_field",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":2.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_pwc170_field",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":2.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_pwc170_field",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":2.31,
+    "max_result":2.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_pwc170_field",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":2.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_harvard_step",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":80.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_harvard_step",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":65.0,
+    "max_result":79.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_harvard_step",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":64.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_harvard_step",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":80.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_harvard_step",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":65.0,
+    "max_result":79.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_harvard_step",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":64.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_beep_20m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":11.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_beep_20m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":9.0,
+    "max_result":11.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_beep_20m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":8.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_beep_20m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":8.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_beep_20m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":6.1,
+    "max_result":8.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_beep_20m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":6.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1.5mi",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":10.15,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1.5mi",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":10.16,
+    "max_result":12.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1.5mi",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":12.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1.5mi",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":12.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1.5mi",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":12.31,
+    "max_result":14.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1.5mi",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":14.31,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_cooper_12min",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":2.5,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_cooper_12min",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":2.0,
+    "max_result":2.49,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_cooper_12min",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_cooper_12min",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":2.16,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_cooper_12min",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.85,
+    "max_result":2.15,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_cooper_12min",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1.84,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1000m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.45,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1000m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":3.46,
+    "max_result":4.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1000m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":4.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1000m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1000m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":4.41,
+    "max_result":5.2,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1000m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.21,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_max",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":38.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_max",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":33.0,
+    "max_result":37.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_max",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":32.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_max",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":25.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_max",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":18.0,
+    "max_result":24.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_max",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":17.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_situp_1min",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":47.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_situp_1min",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":40.0,
+    "max_result":46.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_situp_1min",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":39.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_situp_1min",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":40.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_situp_1min",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":35.0,
+    "max_result":39.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_situp_1min",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":34.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_vertical_jump_sargent",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":55.0,
+    "max_result":999.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_vertical_jump_sargent",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":50.0,
+    "max_result":54.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_vertical_jump_sargent",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":49.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_vertical_jump_sargent",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":39.0,
+    "max_result":999.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_vertical_jump_sargent",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":33.0,
+    "max_result":38.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_vertical_jump_sargent",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":32.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_throw_back",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":11.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_throw_back",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":9.01,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_throw_back",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_throw_back",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":10.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_throw_back",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":8.51,
+    "max_result":10.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_throw_back",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":8.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_long_jump_standing",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":241.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_long_jump_standing",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":224.0,
+    "max_result":240.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_long_jump_standing",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":223.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_long_jump_standing",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":196.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_long_jump_standing",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":184.0,
+    "max_result":195.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_long_jump_standing",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":183.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pullups_max",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":14.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pullups_max",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":12.0,
+    "max_result":13.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pullups_max",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":11.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pullups_max",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":2.0,
+    "max_result":999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pullups_max",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.0,
+    "max_result":1.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pullups_max",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":0.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_triple_jump_standing",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":7.99,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_triple_jump_standing",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":7.02,
+    "max_result":7.98,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_triple_jump_standing",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":7.01,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_triple_jump_standing",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":7.11,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_triple_jump_standing",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":6.29,
+    "max_result":7.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_triple_jump_standing",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":6.28,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_chest_throw",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":5.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_chest_throw",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":4.4,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_chest_throw",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":4.09,
+    "max_result":4.39,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_chest_throw",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":3.45,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_chest_throw",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":3.02,
+    "max_result":3.44,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_medball_chest_throw",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":2.81,
+    "max_result":3.01,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_single_leg_squat",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":21.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_single_leg_squat",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":16.0,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_single_leg_squat",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":11.0,
+    "max_result":15.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_single_leg_squat",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":11.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_single_leg_squat",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":8.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_single_leg_squat",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.0,
+    "max_result":7.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_sorensen_test",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":145.0,
+    "max_result":999.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_sorensen_test",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":125.0,
+    "max_result":144.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_sorensen_test",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":115.0,
+    "max_result":124.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_sorensen_test",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":80.0,
+    "max_result":999.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_sorensen_test",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":60.0,
+    "max_result":79.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_sorensen_test",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":50.0,
+    "max_result":59.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_sit_and_reach",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":19.0,
+    "max_result":99.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_sit_and_reach",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":13.0,
+    "max_result":18.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_sit_and_reach",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":7.0,
+    "max_result":12.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_sit_and_reach",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":20.0,
+    "max_result":99.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_sit_and_reach",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":14.0,
+    "max_result":19.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_sit_and_reach",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":7.0,
+    "max_result":13.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_standing_forward_bend",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":19.0,
+    "max_result":99.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_standing_forward_bend",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":13.0,
+    "max_result":18.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_standing_forward_bend",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":7.0,
+    "max_result":12.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_standing_forward_bend",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":20.0,
+    "max_result":99.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_standing_forward_bend",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":14.0,
+    "max_result":19.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_standing_forward_bend",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":7.0,
+    "max_result":13.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_stick_rotation",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":1.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_stick_rotation",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1.01,
+    "max_result":1.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_stick_rotation",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":1.31,
+    "max_result":1.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_stick_rotation",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":1.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_stick_rotation",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.01,
+    "max_result":1.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_stick_rotation",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":1.31,
+    "max_result":1.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_transverse_split",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_transverse_split",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":20.1,
+    "max_result":45.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_transverse_split",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":45.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_transverse_split",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_transverse_split",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":20.1,
+    "max_result":45.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_transverse_split",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":45.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_rotation",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":18.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_rotation",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":15.8,
+    "max_result":17.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_rotation",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":15.0,
+    "max_result":15.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_rotation",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":18.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_rotation",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":16.2,
+    "max_result":17.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_rotation",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":15.8,
+    "max_result":16.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_hamstring_90_90_ake",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":9.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_hamstring_90_90_ake",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":10.0,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_hamstring_90_90_ake",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":20.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_hamstring_90_90_ake",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":9.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_hamstring_90_90_ake",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":10.0,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_hamstring_90_90_ake",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":20.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_extension_prone",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":25.41,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_extension_prone",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":15.2,
+    "max_result":25.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_extension_prone",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":5.1,
+    "max_result":15.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_extension_prone",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":25.41,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_extension_prone",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":15.2,
+    "max_result":25.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_trunk_extension_prone",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.1,
+    "max_result":15.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_lateral_side_bend",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":20.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_lateral_side_bend",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":12.01,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_lateral_side_bend",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":12.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_lateral_side_bend",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":20.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_lateral_side_bend",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":12.01,
+    "max_result":20.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_lateral_side_bend",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":12.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_longitudinal_split",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_longitudinal_split",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":5.1,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_longitudinal_split",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":10.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_longitudinal_split",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_longitudinal_split",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.1,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_longitudinal_split",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":10.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_ankle_goniometry",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":80.1,
+    "max_result":180.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_ankle_goniometry",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":65.0,
+    "max_result":80.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_ankle_goniometry",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":48.0,
+    "max_result":64.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_ankle_goniometry",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":80.1,
+    "max_result":180.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_ankle_goniometry",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":65.0,
+    "max_result":80.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_ankle_goniometry",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":48.0,
+    "max_result":64.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_t_test",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":9.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_t_test",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":9.51,
+    "max_result":10.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_t_test",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":10.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_t_test",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":10.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_t_test",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":10.51,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_t_test",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":11.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_illinois_run",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":16.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_illinois_run",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":16.2,
+    "max_result":18.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_illinois_run",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":18.2,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_illinois_run",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":17.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_illinois_run",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":18.0,
+    "max_result":21.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_illinois_run",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":21.8,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_quadrant_jump",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":43.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_quadrant_jump",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":35.0,
+    "max_result":42.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_quadrant_jump",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":34.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_quadrant_jump",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":37.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_quadrant_jump",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":29.0,
+    "max_result":36.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_quadrant_jump",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":28.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_hexagon_test",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":12.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_hexagon_test",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":12.31,
+    "max_result":15.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_hexagon_test",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":15.61,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_hexagon_test",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":13.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_hexagon_test",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":13.81,
+    "max_result":18.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_hexagon_test",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":18.61,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_burpee_test",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":30.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_burpee_test",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":17.0,
+    "max_result":29.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_burpee_test",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":16.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_burpee_test",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":27.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_burpee_test",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":14.0,
+    "max_result":26.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_burpee_test",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":13.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_standing_stork",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":40.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_standing_stork",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":25.0,
+    "max_result":39.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_standing_stork",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":24.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_standing_stork",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":37.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_standing_stork",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":29.0,
+    "max_result":36.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_standing_stork",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":28.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_edgren_sidestep",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":46.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_edgren_sidestep",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":42.0,
+    "max_result":45.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_edgren_sidestep",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":38.0,
+    "max_result":41.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_edgren_sidestep",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":42.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_edgren_sidestep",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":38.0,
+    "max_result":41.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_edgren_sidestep",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":34.0,
+    "max_result":37.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_juggling_wall",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":30.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_juggling_wall",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":20.0,
+    "max_result":29.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_juggling_wall",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":19.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_juggling_wall",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":30.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_juggling_wall",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":20.0,
+    "max_result":29.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coord_juggling_wall",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":19.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_l_drill",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":7.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_l_drill",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":7.31,
+    "max_result":7.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_l_drill",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":7.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_l_drill",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":8.2,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_l_drill",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":8.21,
+    "max_result":8.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_l_drill",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":8.91,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_rast_35m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":"вт\/с"
+  },
+  {
+    "test_id":"speed_rast_35m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":5.01,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_rast_35m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":10.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_rast_35m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_rast_35m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.01,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_rast_35m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":10.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"anaerobic_drop_off_400m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":1.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"anaerobic_drop_off_400m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1.51,
+    "max_result":2.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"anaerobic_drop_off_400m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":2.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"anaerobic_drop_off_400m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":1.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"anaerobic_drop_off_400m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.81,
+    "max_result":2.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"anaerobic_drop_off_400m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":2.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_300m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":41.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_300m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":41.1,
+    "max_result":43.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_300m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":43.1,
+    "max_result":45.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_300m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":46.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_300m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":46.51,
+    "max_result":48.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_300m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":48.71,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_elastic_hop_25m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_elastic_hop_25m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":5.51,
+    "max_result":6.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_elastic_hop_25m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":6.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_elastic_hop_25m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":6.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_elastic_hop_25m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":6.51,
+    "max_result":7.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_elastic_hop_25m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":7.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_las",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_las",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":5.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_las",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_las",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_las",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_endurance_las",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_phosphate_recovery",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":"%"
+  },
+  {
+    "test_id":"speed_phosphate_recovery",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":5.01,
+    "max_result":8.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_phosphate_recovery",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":8.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_phosphate_recovery",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_phosphate_recovery",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.01,
+    "max_result":8.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_phosphate_recovery",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":8.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_hurdle_jump",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":44.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_hurdle_jump",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":35.0,
+    "max_result":43.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_hurdle_jump",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":34.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_hurdle_jump",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":37.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_hurdle_jump",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":29.0,
+    "max_result":36.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_hurdle_jump",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":28.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_margaria_kalamen",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":1520.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_margaria_kalamen",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1226.0,
+    "max_result":1519.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_margaria_kalamen",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1225.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_margaria_kalamen",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":1080.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_margaria_kalamen",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":883.0,
+    "max_result":1079.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_margaria_kalamen",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":882.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_fatigue",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":90.0,
+    "max_result":100.0,
+    "Unnamed: 5":"%"
+  },
+  {
+    "test_id":"speed_sprint_fatigue",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":85.0,
+    "max_result":89.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_fatigue",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":84.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_fatigue",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":90.0,
+    "max_result":100.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_fatigue",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":85.0,
+    "max_result":89.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_sprint_fatigue",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":84.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_decuple_jump",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":25.8,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_decuple_jump",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":23.7,
+    "max_result":25.79,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_decuple_jump",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":23.69,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_decuple_jump",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":24.69,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_decuple_jump",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":21.5,
+    "max_result":24.68,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_decuple_jump",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":21.49,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_critical_velocity",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":13.7,
+    "max_result":99.99,
+    "Unnamed: 5":"км\/год"
+  },
+  {
+    "test_id":"endurance_critical_velocity",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":10.73,
+    "max_result":13.69,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_critical_velocity",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":10.72,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_critical_velocity",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":11.6,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_critical_velocity",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":8.41,
+    "max_result":11.59,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_critical_velocity",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":8.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1500m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":421.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1500m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":421.01,
+    "max_result":451.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1500m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":451.01,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1500m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":475.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1500m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":475.01,
+    "max_result":505.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_run_1500m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":505.01,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_1500m_predictor",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":421.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_1500m_predictor",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":421.01,
+    "max_result":451.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_1500m_predictor",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":451.01,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_1500m_predictor",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":475.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_1500m_predictor",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":475.01,
+    "max_result":505.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_1500m_predictor",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":505.01,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_accel_200m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":27.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_accel_200m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":27.01,
+    "max_result":29.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_accel_200m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":29.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_accel_200m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":27.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_accel_200m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":27.31,
+    "max_result":29.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_accel_200m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":29.31,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_leg_hopping_25m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":7.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_leg_hopping_25m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":7.51,
+    "max_result":9.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_leg_hopping_25m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":9.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_leg_hopping_25m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":8.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_leg_hopping_25m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":8.51,
+    "max_result":10.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_leg_hopping_25m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":10.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"special_endurance_kosmin",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":1401.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"special_endurance_kosmin",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1201.0,
+    "max_result":1400.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"special_endurance_kosmin",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1200.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"special_endurance_kosmin",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":1201.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"special_endurance_kosmin",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1001.0,
+    "max_result":1200.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"special_endurance_kosmin",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":1000.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_conconi_field",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":13.51,
+    "max_result":99.99,
+    "Unnamed: 5":"км\/год"
+  },
+  {
+    "test_id":"endurance_conconi_field",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":11.01,
+    "max_result":13.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_conconi_field",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":11.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_conconi_field",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":11.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_conconi_field",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":9.01,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"endurance_conconi_field",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_endurance_2km",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":660.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_endurance_2km",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":660.01,
+    "max_result":810.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_endurance_2km",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":810.01,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_endurance_2km",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":750.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_endurance_2km",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":750.01,
+    "max_result":930.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"walking_endurance_2km",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":930.01,
+    "max_result":9999.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_penta_jump",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":14.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_penta_jump",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":13.01,
+    "max_result":14.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_penta_jump",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":13.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_penta_jump",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":12.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_penta_jump",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":11.51,
+    "max_result":12.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"power_penta_jump",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"technique_walking_balance",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.2,
+    "Unnamed: 5":"секунд "
+  },
+  {
+    "test_id":"technique_walking_balance",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":4.21,
+    "max_result":4.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"technique_walking_balance",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":4.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"technique_walking_balance",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"technique_walking_balance",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":4.61,
+    "max_result":5.2,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"technique_walking_balance",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.21,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_fatigue_index_30m",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":90.0,
+    "max_result":100.0,
+    "Unnamed: 5":"%"
+  },
+  {
+    "test_id":"speed_fatigue_index_30m",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":85.0,
+    "max_result":89.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_fatigue_index_30m",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":84.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_fatigue_index_30m",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":90.0,
+    "max_result":100.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_fatigue_index_30m",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":85.0,
+    "max_result":89.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_fatigue_index_30m",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":84.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_vertical_runup",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":75.1,
+    "max_result":150.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_vertical_runup",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":60.1,
+    "max_result":75.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_vertical_runup",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":60.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_vertical_runup",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":55.1,
+    "max_result":100.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_vertical_runup",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":45.1,
+    "max_result":55.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_vertical_runup",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":45.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_one_leg",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":7.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_one_leg",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":6.01,
+    "max_result":7.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_one_leg",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":6.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_one_leg",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":5.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_one_leg",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":4.41,
+    "max_result":5.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_one_leg",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":4.4,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_standing",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":7.99,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_standing",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":7.02,
+    "max_result":7.98,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_standing",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":7.01,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_standing",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":7.11,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_standing",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":6.29,
+    "max_result":7.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_triple_standing",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":6.28,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_drop_reactive",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":45.1,
+    "max_result":99.99,
+    "Unnamed: 5":"висота"
+  },
+  {
+    "test_id":"jump_drop_reactive",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":36.1,
+    "max_result":45.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_drop_reactive",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":36.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_drop_reactive",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":33.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_drop_reactive",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":26.1,
+    "max_result":33.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_drop_reactive",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":26.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_five_fold",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":14.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_five_fold",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":13.01,
+    "max_result":14.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_five_fold",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":13.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_five_fold",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":12.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_five_fold",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":11.51,
+    "max_result":12.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_five_fold",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_ten_fold",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":25.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_ten_fold",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":23.71,
+    "max_result":25.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_ten_fold",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":23.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_ten_fold",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":24.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_ten_fold",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":21.51,
+    "max_result":24.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_ten_fold",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":21.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_squat_power",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":50.1,
+    "max_result":150.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_squat_power",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":40.0,
+    "max_result":50.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_squat_power",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":39.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_squat_power",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":33.1,
+    "max_result":100.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_squat_power",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":25.0,
+    "max_result":33.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_squat_power",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":24.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_cmj_no_arms",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":46.0,
+    "max_result":99.99,
+    "Unnamed: 5":"порівняння з sj"
+  },
+  {
+    "test_id":"jump_cmj_no_arms",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":42.0,
+    "max_result":45.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_cmj_no_arms",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":41.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_cmj_no_arms",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":32.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_cmj_no_arms",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":28.0,
+    "max_result":31.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_cmj_no_arms",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":27.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_differentiation_50",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.5,
+    "Unnamed: 5":"см"
+  },
+  {
+    "test_id":"jump_differentiation_50",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":4.51,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_differentiation_50",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":9.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_differentiation_50",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_differentiation_50",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.51,
+    "max_result":11.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_differentiation_50",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":11.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_hurdle_continuous",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":2.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_hurdle_continuous",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":2.11,
+    "max_result":2.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_hurdle_continuous",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":2.71,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_hurdle_continuous",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":2.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_hurdle_continuous",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":2.51,
+    "max_result":3.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"jump_hurdle_continuous",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":3.31,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_bomb_throw_back",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":11.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_bomb_throw_back",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":9.01,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_bomb_throw_back",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_bomb_throw_back",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":10.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_bomb_throw_back",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":8.01,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_bomb_throw_back",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":8.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_side_throw_twist",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":10.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_side_throw_twist",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":8.51,
+    "max_result":10.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_side_throw_twist",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":8.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_side_throw_twist",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":9.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_side_throw_twist",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":7.01,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_side_throw_twist",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":7.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_bench_press_1rm",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":1.22,
+    "max_result":99.99,
+    "Unnamed: 5":"Результат фіксується як відношення максимальної ваги, піднятої за одне повторення (1-RM), до власної маси тіла атлета"
+  },
+  {
+    "test_id":"max_strength_bench_press_1rm",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":0.93,
+    "max_result":1.21,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_bench_press_1rm",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":0.92,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_bench_press_1rm",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.42,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_bench_press_1rm",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":0.35,
+    "max_result":0.41,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_bench_press_1rm",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":0.34,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_power_clean_max",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":1.11,
+    "max_result":99.99,
+    "Unnamed: 5":"Результат фіксується як відношення максимальної ваги штанги, взятої на груди за одне повторення (1-RM), до власної маси тіла атлета"
+  },
+  {
+    "test_id":"explosive_power_clean_max",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":0.86,
+    "max_result":1.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_power_clean_max",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":0.85,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_power_clean_max",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.66,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_power_clean_max",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":0.46,
+    "max_result":0.65,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_power_clean_max",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":0.45,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_forward_overhead_throw",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":11.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_forward_overhead_throw",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":8.51,
+    "max_result":11.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_forward_overhead_throw",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":8.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_forward_overhead_throw",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":7.91,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_forward_overhead_throw",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.91,
+    "max_result":7.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"medball_forward_overhead_throw",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.0,
+    "max_result":5.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_single_movement_claps",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.6,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_single_movement_claps",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":3.61,
+    "max_result":3.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_single_movement_claps",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":3.91,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_single_movement_claps",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.9,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_single_movement_claps",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":3.91,
+    "max_result":4.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"speed_single_movement_claps",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":4.11,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_back_squat",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":2.0,
+    "max_result":99.99,
+    "Unnamed: 5":"Оцінювання проводиться за коефіцієнтом відносної сили (максимальна вага штанги, піднята 1 раз \/ власна маса тіла)"
+  },
+  {
+    "test_id":"max_strength_back_squat",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1.83,
+    "max_result":1.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_back_squat",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":1.65,
+    "max_result":1.82,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_back_squat",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":1.54,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_back_squat",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":1.35,
+    "max_result":1.53,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_back_squat",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":1.26,
+    "max_result":1.34,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_overhead_press",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":1.32,
+    "max_result":99.99,
+    "Unnamed: 5":"Оцінювання проводиться за коефіцієнтом відносної сили (максимальна вага штанги, піднята 1 раз \/ власна маса тіла)"
+  },
+  {
+    "test_id":"max_strength_overhead_press",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":1.22,
+    "max_result":1.31,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_overhead_press",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":1.06,
+    "max_result":1.21,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_overhead_press",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.49,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_overhead_press",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":0.42,
+    "max_result":0.48,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"max_strength_overhead_press",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":0.4,
+    "max_result":0.41,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_barbell_jump_low",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":55.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_barbell_jump_low",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":45.0,
+    "max_result":54.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_barbell_jump_low",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":18.0,
+    "max_result":44.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_barbell_jump_low",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":32.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_barbell_jump_low",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":27.0,
+    "max_result":31.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_barbell_jump_low",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":9.0,
+    "max_result":26.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_seated_medball_chest",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":8.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_seated_medball_chest",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":7.5,
+    "max_result":8.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_seated_medball_chest",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":6.5,
+    "max_result":7.49,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_seated_medball_chest",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":3.7,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_seated_medball_chest",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":2.9,
+    "max_result":3.69,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"explosive_seated_medball_chest",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":1.8,
+    "max_result":2.89,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_20yard_shuttle",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_20yard_shuttle",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":4.11,
+    "max_result":4.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_20yard_shuttle",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":4.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_20yard_shuttle",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":4.7,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_20yard_shuttle",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":4.71,
+    "max_result":5.2,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"agility_20yard_shuttle",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":5.21,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"football_kick_accuracy",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":6.1,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"football_kick_accuracy",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":6.11,
+    "max_result":8.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"football_kick_accuracy",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":8.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"football_kick_accuracy",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":7.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"football_kick_accuracy",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":7.51,
+    "max_result":9.8,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"football_kick_accuracy",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":9.81,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"basketball_shoot_5points",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":8.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"basketball_shoot_5points",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":6.0,
+    "max_result":7.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"basketball_shoot_5points",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":4.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"basketball_shoot_5points",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":7.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"basketball_shoot_5points",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.0,
+    "max_result":6.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"basketball_shoot_5points",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":3.0,
+    "max_result":4.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_slalom_30m",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_slalom_30m",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_slalom_30m",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_slalom_30m",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_slalom_30m",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_slalom_30m",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_bridge_running",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":28.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_bridge_running",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":28.1,
+    "max_result":30.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_bridge_running",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":30.6,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_bridge_running",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":32.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_bridge_running",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":32.1,
+    "max_result":35.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_bridge_running",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":35.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_arch_throws",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":28.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_arch_throws",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":28.1,
+    "max_result":31.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_arch_throws",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":31.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_arch_throws",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":32.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_arch_throws",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":32.1,
+    "max_result":35.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_arch_throws",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":35.6,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_rolls_spot",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":22.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_rolls_spot",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":22.01,
+    "max_result":23.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_rolls_spot",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":23.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_rolls_spot",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":25.3,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_rolls_spot",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":25.31,
+    "max_result":26.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_rolls_spot",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":26.51,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_back_throws",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":31.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_back_throws",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":31.1,
+    "max_result":34.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_back_throws",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":34.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_back_throws",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":35.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_back_throws",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":35.6,
+    "max_result":39.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"combat_dummy_back_throws",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":39.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"boxing_punch_frequency",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":22.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"boxing_punch_frequency",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":20.0,
+    "max_result":21.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"boxing_punch_frequency",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":18.0,
+    "max_result":19.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"boxing_punch_frequency",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":20.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"boxing_punch_frequency",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":18.0,
+    "max_result":19.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"boxing_punch_frequency",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":16.0,
+    "max_result":17.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_flamingo",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":3.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_flamingo",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":3.1,
+    "max_result":9.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_flamingo",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":9.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_flamingo",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":5.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_flamingo",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":5.1,
+    "max_result":12.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"balance_flamingo",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":12.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_rhythm_tapping",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":11.0,
+    "max_result":14.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_rhythm_tapping",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":7.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_rhythm_tapping",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":3.0,
+    "max_result":6.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_rhythm_tapping",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":11.0,
+    "max_result":14.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_rhythm_tapping",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":7.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_rhythm_tapping",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":3.0,
+    "max_result":6.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_spine_bridge",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":29.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_spine_bridge",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":30.0,
+    "max_result":49.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_spine_bridge",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":50.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_spine_bridge",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":29.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_spine_bridge",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":30.0,
+    "max_result":49.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_spine_bridge",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":50.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_dislocate",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":45.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_dislocate",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":45.6,
+    "max_result":55.5,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_dislocate",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":55.6,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_dislocate",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":40.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_dislocate",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":40.1,
+    "max_result":50.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_shoulder_dislocate",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":50.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_bench_turns",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":9.0,
+    "max_result":99.99,
+    "Unnamed: 5":"разів"
+  },
+  {
+    "test_id":"coordination_bench_turns",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":6.0,
+    "max_result":8.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_bench_turns",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":3.0,
+    "max_result":5.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_bench_turns",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":9.0,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_bench_turns",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":6.0,
+    "max_result":8.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"coordination_bench_turns",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":3.0,
+    "max_result":5.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_split_transverse",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":14.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_split_transverse",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":14.1,
+    "max_result":24.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_split_transverse",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":24.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_split_transverse",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":14.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_split_transverse",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":14.1,
+    "max_result":24.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_split_transverse",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":24.1,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"crf_rockport_walk",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":702.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"crf_rockport_walk",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":703.0,
+    "max_result":818.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"crf_rockport_walk",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":819.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"crf_rockport_walk",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":769.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"crf_rockport_walk",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":770.0,
+    "max_result":852.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"crf_rockport_walk",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":853.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_chair_sit_reach",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_chair_sit_reach",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_chair_sit_reach",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_chair_sit_reach",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_chair_sit_reach",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"flexibility_chair_sit_reach",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_endurance",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_endurance",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_endurance",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_endurance",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_endurance",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"strength_pushup_endurance",
+    "gender":null,
+    "level_name_ui":null,
+    "min_result":null,
+    "max_result":null,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"core_endurance_plank",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":121.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"core_endurance_plank",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":61.0,
+    "max_result":120.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"core_endurance_plank",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":31.0,
+    "max_result":60.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"core_endurance_plank",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":121.0,
+    "max_result":9999.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"core_endurance_plank",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":61.0,
+    "max_result":120.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"core_endurance_plank",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":31.0,
+    "max_result":60.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"functional_mobility_tug",
+    "gender":"male",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"functional_mobility_tug",
+    "gender":"male",
+    "level_name_ui":"середній",
+    "min_result":10.01,
+    "max_result":12.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"functional_mobility_tug",
+    "gender":"male",
+    "level_name_ui":"задовільний",
+    "min_result":12.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"functional_mobility_tug",
+    "gender":"female",
+    "level_name_ui":"добрий",
+    "min_result":0.0,
+    "max_result":10.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"functional_mobility_tug",
+    "gender":"female",
+    "level_name_ui":"середній",
+    "min_result":10.01,
+    "max_result":12.0,
+    "Unnamed: 5":null
+  },
+  {
+    "test_id":"functional_mobility_tug",
+    "gender":"female",
+    "level_name_ui":"задовільний",
+    "min_result":12.01,
+    "max_result":99.99,
+    "Unnamed: 5":null
+  }
+]
