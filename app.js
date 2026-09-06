@@ -740,13 +740,36 @@ function renderTeacherDashboard() {
       `;
     })
     .join('');
-
+  // Add export controls
+  const exportControls = document.createElement('div');
+  exportControls.style.marginTop = '12px';
+  exportControls.innerHTML = `
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+      <button id="export-all-csv" class="secondary-btn" type="button">Експорт усіх студентів (CSV)</button>
+      <input id="sheets-endpoint" type="text" placeholder="Apps Script URL (опційно)" style="flex:1;min-width:220px;" />
+      <button id="export-to-sheets" class="secondary-btn" type="button">Експорт у Google Sheets</button>
+    </div>
+  `;
+  elements.teacherDetail.prepend(exportControls);
   elements.teacherStudents.querySelectorAll('[data-student-id]').forEach((button) => {
     button.addEventListener('click', () => {
       state.selectedStudentId = button.dataset.studentId;
       renderTeacherDashboard();
     });
   });
+
+  // Wire export buttons if present
+  const csvBtn = document.getElementById('export-all-csv');
+  if (csvBtn) csvBtn.addEventListener('click', exportStudentsCSV);
+  const sheetsBtn = document.getElementById('export-to-sheets');
+  if (sheetsBtn) {
+    sheetsBtn.addEventListener('click', async () => {
+      const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
+      const res = await exportToSheets(endpoint);
+      if (res.ok) showAuthMessage('Дані експортовано в Google Sheets.');
+      else showAuthMessage(`Помилка експорту: ${res.error}`, true);
+    });
+  }
 
   const answers = selectedStudent.quizAnswers || [];
   const results = selectedStudent.results || [];
@@ -808,6 +831,65 @@ function renderTeacherDashboard() {
         : '<p>Відповіді на завдання відсутні.</p>'}
     </div>
   `;
+}
+
+function buildStudentsCSV(students) {
+  const rows = [];
+  // Header
+  rows.push(['id', 'name', 'email', 'gender', 'specialization', 'testId', 'testValue', 'testLevel', 'testDate', 'quizTaskId', 'quizTaskName', 'quizAnswer', 'quizDate'].join(','));
+  students.forEach((s) => {
+    const profile = s.profile || {};
+    const tests = s.results || [];
+    const answers = s.quizAnswers || [];
+    const maxRows = Math.max(tests.length, answers.length, 1);
+    for (let i = 0; i < maxRows; i++) {
+      const t = tests[i] || {};
+      const a = answers[i] || {};
+      const row = [
+        s.id || '',
+        s.name || '',
+        s.email || '',
+        profile.gender || '',
+        profile.specialization || '',
+        t.testId || '',
+        t.value || '',
+        t.levelNameUi || '',
+        t.date || '',
+        a.taskId || '',
+        a.taskName || '',
+        (a.answer || '').replace(/\n/g, ' '),
+        a.createdAt || '',
+      ];
+      rows.push(row.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(','));
+    }
+  });
+  return rows.join('\n');
+}
+
+function exportStudentsCSV() {
+  const students = state.users.filter((u) => u.role === 'student');
+  const csv = buildStudentsCSV(students);
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `students_export_${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+async function exportToSheets(endpointUrl) {
+  if (!endpointUrl) return { ok: false, error: 'No endpoint' };
+  const students = state.users.filter((u) => u.role === 'student');
+  try {
+    const res = await fetch(endpointUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ students }) });
+    if (!res.ok) throw new Error('Request failed');
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: String(e) };
+  }
 }
 
 async function loadAppData() {
