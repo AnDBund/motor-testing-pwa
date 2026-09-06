@@ -54,7 +54,12 @@
           <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
             <button type="submit" class="primary-btn">Увійти / зареєструватися</button>
           </div>
-          <div id="googleSignIn" style="margin-top:10px;"></div>
+          <div id="google-signin-wrap" style="margin-top:10px; display:flex; justify-content:flex-start;">
+            <button id="google-login-button" type="button" class="secondary-btn google-login-btn">
+              Увійти через Google
+            </button>
+            <div id="googleSignIn" style="margin-top:0;"></div>
+          </div>
         </form>
 
         <div id="auth-message" class="auth-message" aria-live="polite"></div>

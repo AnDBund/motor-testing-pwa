@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Motor Testing icon">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#ecfeff"/>
+  <circle cx="64" cy="64" r="42" fill="url(#g)"/>
+  <path d="M42 75 L58 43 L70 58 L86 38 L92 42 L72 79 L58 64 L50 79 Z" fill="#ffffff"/>
+  <path d="M28 94 C38 82, 49 76, 64 76 C79 76, 90 82, 100 94" fill="none" stroke="#d1fae5" stroke-width="8" stroke-linecap="round"/>
+</svg>

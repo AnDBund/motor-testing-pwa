@@ -23,6 +23,8 @@ const elements = {
   authEmail: document.querySelector('#auth-email'),
   authPassword: document.querySelector('#auth-password'),
   authMessage: document.querySelector('#auth-message'),
+  googleSignInContainer: document.querySelector('#googleSignIn'),
+  googleLoginButton: document.querySelector('#google-login-button'),
   teacherLoginButton: document.querySelector('#teacher-login-button'),
   appScreen: document.querySelector('#app-screen'),
   logoutButton: document.querySelector('#logout-button'),
@@ -336,10 +338,23 @@ function normalizeGmail(email) {
 
 function initGoogleSignIn(clientId) {
   if (!clientId) return;
-  // Render Google button when library loaded
+
+  const fallbackButton = elements.googleLoginButton;
+  const fallbackMessage = 'Google Sign-In працює тільки через http://localhost або HTTPS. Увійдіть через локальний сервер або додайте правильний origin у Google Cloud.';
+
+  if (window.location.protocol === 'file:') {
+    showAuthMessage(fallbackMessage, true);
+    if (fallbackButton) {
+      fallbackButton.hidden = false;
+      fallbackButton.disabled = true;
+      fallbackButton.title = fallbackMessage;
+      fallbackButton.textContent = 'Google Sign-In недоступний у file://';
+    }
+    return;
+  }
+
   const tryInit = () => {
     if (!window.google || !google.accounts || !google.accounts.id) {
-      // retry shortly if not yet loaded
       setTimeout(tryInit, 300);
       return;
     }
@@ -351,11 +366,26 @@ function initGoogleSignIn(clientId) {
 
     const container = document.getElementById('googleSignIn');
     if (container) {
-      google.accounts.id.renderButton(container, { theme: 'outline', size: 'large' });
+      google.accounts.id.renderButton(container, { theme: 'outline', size: 'large', width: 280 });
+    }
+
+    if (fallbackButton) {
+      fallbackButton.hidden = true;
     }
   };
 
   tryInit();
+
+  if (fallbackButton) {
+    fallbackButton.addEventListener('click', () => {
+      if (window.google && google.accounts && google.accounts.id) {
+        google.accounts.id.prompt();
+        showAuthMessage('Відкривається вікно Google Sign-In.');
+        return;
+      }
+      showAuthMessage(fallbackMessage, true);
+    });
+  }
 }
 
 function handleCredentialResponse(response) {
@@ -1061,8 +1091,8 @@ function renderTeacherDashboard() {
 
       const importPasteClear = document.getElementById('import-paste-clear');
       if (importPasteClear) importPasteClear.addEventListener('click', () => { const ta = document.getElementById('import-json-text'); if (ta) ta.value = ''; });
-      const importBtn = document.getElementById('import-all-json');
-      if (importBtn) importBtn.addEventListener('click', () => {
+      const importBtnPaste = document.getElementById('import-all-json');
+      if (importBtnPaste) importBtnPaste.addEventListener('click', () => {
         const ta = document.getElementById('import-json-text');
         if (ta && ta.value) window.importStudentsDump(ta.value.trim());
       });
