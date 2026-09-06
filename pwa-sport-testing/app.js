@@ -73,6 +73,13 @@ async function initFirebaseIfConfigured() {
     firebaseAuth = getAuth(firebaseApp);
     firebaseDb = getFirestore(firebaseApp);
 
+    // Debug helper: expose internal Firebase handles for easy inspection in DevTools
+    try {
+      window._mt = window._mt || {};
+      window._mt.firebase = { app: firebaseApp, auth: firebaseAuth, db: firebaseDb };
+      console.log('Firebase initialized:', { projectId: fbConfig.projectId, authDomain: fbConfig.authDomain });
+    } catch (e) {}
+
     const origSaveUsers = saveUsers;
     saveUsers = function () {
       origSaveUsers();
@@ -92,6 +99,7 @@ async function saveUserToFirestore(user) {
     const { doc, setDoc } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
     const id = user.id || user.email;
     await setDoc(doc(firebaseDb, 'users', id), normalizeUserForFirestore(user), { merge: true });
+    console.log('Saved user to Firestore:', id);
   } catch (e) {
     console.warn('Failed to save user to Firestore', e);
   }
