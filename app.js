@@ -112,20 +112,7 @@ function ensureDemoUsers() {
       createdAt: new Date().toISOString(),
     },
   ];
-
-  const defaultTeacher = {
-    id: 'teacher-demo-1',
-    name: 'Віктор Паламарчук',
-    email: 'teacher@demo.com',
-    password: 'demo123',
-    role: 'teacher',
-    profile: {
-      department: 'Теорія та методика фізичної культури',
-    },
-    createdAt: new Date().toISOString(),
-  };
-
-  state.users = [...defaultStudents, defaultTeacher];
+  state.users = [...defaultStudents];
   writeStorage(USERS_KEY, state.users);
 }
 
@@ -225,16 +212,15 @@ function logout() {
 }
 
 function handleTeacherLogin() {
-  // ensure demo users present
-  ensureDemoUsers();
-  const teacher = state.users.find((u) => u.role === 'teacher') || state.users.find((u) => u.email === 'teacher@demo.com');
-  if (!teacher) {
-    showAuthMessage('Викладач не знайдений. Зверніться до адміністратора.', true);
+  // Prompt Google Identity to sign in the teacher; do not auto-set any local demo user.
+  if (window.google && google.accounts && google.accounts.id) {
+    google.accounts.id.prompt();
+    showAuthMessage('Будь ласка, увійдіть через Google акаунт викладача (athletica401@gmail.com).');
     return;
   }
 
-  setCurrentUser(teacher);
-  showAuthMessage(`Увійшли як викладач: ${teacher.name}`);
+  // Fallback: instruct user to use Google Sign-In button
+  showAuthMessage('Використайте кнопку Google Sign‑In для входу як викладач.', true);
 }
 
 // --- Google Identity helpers ---
@@ -290,8 +276,8 @@ function handleCredentialResponse(response) {
   const name = payload.name || email.split('@')[0];
 
   // Map Google account to app user; teacher whitelist keeps demo teacher
-  const teacherWhitelist = ['teacher@demo.com'];
-  const role = teacherWhitelist.includes(email) ? 'teacher' : 'student';
+  const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['teacher@demo.com'];
+  const role = teacherWhitelist.map((e) => e.toLowerCase()).includes(email) ? 'teacher' : 'student';
 
   let existing = state.users.find((u) => u.email.toLowerCase() === email);
   if (!existing) {
@@ -823,6 +809,12 @@ async function loadAppData() {
 
     state.taskGuide = await loadJson(taskUrl);
     state.norms = await loadJson(normUrl);
+    // load teacher whitelist (client-side JSON)
+    try {
+      state.teachersWhitelist = await loadJson('./data/teachers.json');
+    } catch (e) {
+      state.teachersWhitelist = ['teacher@demo.com'];
+    }
 
     if (!state.taskGuide.length) {
       throw new Error('Task guide is empty.');
@@ -905,8 +897,31 @@ function bindEvents() {
 }
 
 async function initApp() {
-  ensureDemoUsers();
+  // Load users from storage first
   state.users = readStorage(USERS_KEY, []);
+
+  // Load teachers whitelist early so we can sanitize stored users
+  try {
+    state.teachersWhitelist = await loadJson('./data/teachers.json');
+  } catch (e) {
+    state.teachersWhitelist = ['athletica401@gmail.com'];
+  }
+
+  // Remove any stored teacher accounts that are NOT in the whitelist
+  const whitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist.map((e) => e.toLowerCase()) : [];
+  state.users = state.users.filter((u) => {
+    if (!u || !u.email) return false;
+    if (u.role && u.role.toLowerCase() === 'teacher') {
+      return whitelist.includes(u.email.toLowerCase());
+    }
+    return true;
+  });
+
+  // If no users remain, seed demo students only
+  if (!state.users.length) {
+    ensureDemoUsers();
+  }
+
   loadCurrentUser();
   bindEvents();
   // initialize Google Sign-In (if client id provided)
