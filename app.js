@@ -238,6 +238,12 @@ function setCurrentUser(user) {
   state.currentUser = user;
   persistCurrentUser();
   renderApplication();
+  // If Firebase is configured and this user is a teacher, subscribe to Firestore users
+  try {
+    if (firebaseDb && user && (user.role || '').toLowerCase() === 'teacher') {
+      subscribeToFirestoreUsers();
+    }
+  } catch (e) {}
 }
 
 function showAuthMessage(message, isError = false) {
