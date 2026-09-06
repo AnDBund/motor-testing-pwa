@@ -240,6 +240,18 @@ function parseJwt(token) {
   }
 }
 
+function normalizeGmail(email) {
+  if (!email) return email;
+  const parts = email.toLowerCase().split('@');
+  if (parts.length !== 2) return email.toLowerCase();
+  const [local, domain] = parts;
+  if (domain === 'gmail.com') {
+    const base = local.split('+')[0].replace(/\./g, '');
+    return `${base}@gmail.com`;
+  }
+  return email.toLowerCase();
+}
+
 function initGoogleSignIn(clientId) {
   if (!clientId) return;
   // Render Google button when library loaded
@@ -282,7 +294,9 @@ function handleCredentialResponse(response) {
 
   // Map Google account to app user; teacher whitelist keeps demo teacher
   const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['athletica_401@gmail.com'];
-  const role = teacherWhitelist.map((e) => e.toLowerCase()).includes(email) ? 'teacher' : 'student';
+  const normalizedEmail = normalizeGmail(email);
+  const normalizedWhitelist = teacherWhitelist.map((e) => normalizeGmail(String(e).toLowerCase()));
+  const role = teacherWhitelist.map((e) => String(e).toLowerCase()).includes(email) || normalizedWhitelist.includes(normalizedEmail) ? 'teacher' : 'student';
 
   let existing = state.users.find((u) => u.email.toLowerCase() === email);
   if (!existing) {
