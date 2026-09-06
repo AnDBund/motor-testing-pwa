@@ -772,6 +772,56 @@ function renderTeacherDashboard() {
     });
   }
 
+  // Import students dump (paste JSON) — available from teacher console/UI if button exists
+  window.importStudentsDump = function (text) {
+    try {
+      if (!text) throw new Error('No input provided');
+      const parsed = JSON.parse(text);
+      const incoming = Array.isArray(parsed) ? parsed : (parsed.students || parsed.users || []);
+      if (!Array.isArray(incoming)) throw new Error('Expected an array of student objects');
+
+      const raw = localStorage.getItem('motor-testing-users') || '[]';
+      const stored = JSON.parse(raw);
+      const byEmail = {};
+      stored.forEach(u => {
+        const e = (typeof normalizeGmail === 'function') ? normalizeGmail(u.email || u.login || '') : (u.email || u.login || '');
+        if (e) byEmail[e] = u;
+      });
+
+      let added = 0, updated = 0;
+      incoming.forEach(u => {
+        const eRaw = u.email || u.login || '';
+        const email = (typeof normalizeGmail === 'function') ? normalizeGmail(eRaw) : eRaw;
+        if (!email) return;
+        if (byEmail[email]) {
+          byEmail[email] = Object.assign({}, byEmail[email], u);
+          updated++;
+        } else {
+          byEmail[email] = u;
+          added++;
+        }
+      });
+
+      const merged = Object.values(byEmail);
+      localStorage.setItem('motor-testing-users', JSON.stringify(merged));
+      showAuthMessage(`Імпортовано: додано ${added}, оновлено ${updated}.`);
+      if (typeof renderTeacherDashboard === 'function') renderTeacherDashboard();
+      return { ok: true, added, updated };
+    } catch (err) {
+      showAuthMessage(`Імпорт не вдався: ${err.message}`, true);
+      return { ok: false, error: err.message };
+    }
+  };
+
+  window.importStudentsDumpPrompt = function () {
+    const text = window.prompt('Вставте JSON дамп `motor-testing-users` і натисніть OK');
+    if (text) return window.importStudentsDump(text);
+    return { ok: false, error: 'Canceled' };
+  };
+
+  const importBtn = document.getElementById('import-all-json');
+  if (importBtn) importBtn.addEventListener('click', window.importStudentsDumpPrompt);
+
   const answers = selectedStudent.quizAnswers || [];
   const results = selectedStudent.results || [];
   const progress = getStudentProgress(selectedStudent);
