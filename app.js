@@ -53,11 +53,111 @@ const elements = {
   studentHistoryList: document.querySelector('#student-history-list'),
 };
 
+// Firebase runtime handles (optional)
+let firebaseApp = null;
+let firebaseAuth = null;
+let firebaseDb = null;
+let firebaseUnsubscribeUsers = null;
+
+
 function setOnlineStatus() {
   const isOnline = navigator.onLine;
   elements.onlineStatus.textContent = isOnline ? 'Online' : 'Offline';
   elements.onlineStatus.classList.toggle('online', isOnline);
   elements.onlineStatus.classList.toggle('offline', !isOnline);
+}
+
+async function initFirebaseIfConfigured() {
+  try {
+    const fbConfig = await loadJson('./data/firebase-config.json');
+    if (!fbConfig || !fbConfig.apiKey) throw new Error('No firebase config');
+
+    // dynamic import of modular SDK
+    const [{ initializeApp }, { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider }, { getFirestore, collection, doc, setDoc, onSnapshot, getDocs } ] = await Promise.all([
+      import('https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js'),
+      import('https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js'),
+      import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'),
+    ]);
+
+    firebaseApp = initializeApp(fbConfig);
+    firebaseAuth = getAuth(firebaseApp);
+    firebaseDb = getFirestore(firebaseApp);
+
+    // If current user exists and is student, push to Firestore
+    if (state.currentUser) {
+      saveUserToFirestore(state.currentUser).catch(() => {});
+    }
+
+    // Hook saveUsers so local changes are pushed
+    const origSaveUsers = saveUsers;
+    saveUsers = function () {
+      origSaveUsers();
+      try {
+        // push all users (upsert) in background
+        state.users.forEach((u) => { if (u && u.email) saveUserToFirestore(u).catch(() => {}); });
+      } catch (e) {}
+    };
+
+    // If current user is teacher, subscribe to users collection
+    if (state.currentUser && (state.currentUser.role || '').toLowerCase() === 'teacher') {
+      subscribeToFirestoreUsers();
+    }
+
+    return true;
+  } catch (err) {
+    throw err;
+  }
+}
+
+async function saveUserToFirestore(user) {
+  if (!firebaseDb || !user || !user.email) return;
+  try {
+    const { doc: docFn } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
+  } catch (e) {}
+  const id = user.id || user.email;
+  try {
+    const { doc, setDoc } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
+    await setDoc(doc(firebaseDb, 'users', id), normalizeUserForFirestore(user), { merge: true });
+  } catch (e) {
+    console.warn('Failed to save user to Firestore', e);
+  }
+}
+
+function normalizeUserForFirestore(u) {
+  return {
+    id: u.id,
+    name: u.name,
+    email: u.email,
+    role: u.role || 'student',
+    profile: u.profile || {},
+    quizAnswers: u.quizAnswers || [],
+    results: u.results || [],
+    createdAt: u.createdAt || new Date().toISOString(),
+  };
+}
+
+async function subscribeToFirestoreUsers() {
+  if (!firebaseDb) return;
+  try {
+    const { collection, onSnapshot } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
+    const col = collection(firebaseDb, 'users');
+    firebaseUnsubscribeUsers = onSnapshot(col, (snapshot) => {
+      const incoming = [];
+      snapshot.forEach((doc) => incoming.push(doc.data()));
+      // Merge incoming into local storage
+      const raw = localStorage.getItem(USERS_KEY) || '[]';
+      const stored = JSON.parse(raw);
+      const byId = {};
+      stored.forEach(s => { if (s && s.email) byId[(s.email||s.id).toLowerCase()] = s; });
+      incoming.forEach(i => { if (i && (i.email || i.id)) byId[(i.email||i.id).toLowerCase()] = i; });
+      const merged = Object.values(byId);
+      localStorage.setItem(USERS_KEY, JSON.stringify(merged));
+      state.users = merged;
+      if (typeof renderTeacherDashboard === 'function') renderTeacherDashboard();
+    });
+  } catch (e) {
+    console.warn('subscribeToFirestoreUsers failed', e);
+  }
 }
 
 function readStorage(key, fallback = []) {
@@ -1234,6 +1334,13 @@ async function initApp() {
   bindEvents();
   // initialize Google Sign-In (if client id provided)
   initGoogleSignIn(GOOGLE_CLIENT_ID);
+
+  // Attempt to initialize Firebase integration if `data/firebase-config.json` exists
+  try {
+    await initFirebaseIfConfigured();
+  } catch (e) {
+    console.info('Firebase not configured or failed to initialize:', e && e.message);
+  }
   await loadAppData();
   renderApplication();
 
