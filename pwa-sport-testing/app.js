@@ -301,8 +301,13 @@ function handleCredentialResponse(response) {
     saveUsers();
   }
 
+  // Save raw Google payload for debugging (helps verify which email Google returned)
+  try {
+    localStorage.setItem('motor-testing-last-google', JSON.stringify(payload));
+  } catch (e) {}
+
   setCurrentUser(existing);
-  showAuthMessage(`Увійшли як ${existing.name}`);
+  showAuthMessage(`Увійшли як ${existing.name} (${existing.email}) — роль: ${existing.role}`);
 }
 
 function renderApplication() {

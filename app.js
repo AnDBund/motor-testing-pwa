@@ -275,6 +275,11 @@ function handleCredentialResponse(response) {
   const email = payload.email.toLowerCase();
   const name = payload.name || email.split('@')[0];
 
+  // Save raw Google payload for debugging (helps verify which email Google returned)
+  try {
+    localStorage.setItem('motor-testing-last-google', JSON.stringify(payload));
+  } catch (e) {}
+
   // Map Google account to app user; teacher whitelist keeps demo teacher
   const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['athletica_401@gmail.com'];
   const role = teacherWhitelist.map((e) => e.toLowerCase()).includes(email) ? 'teacher' : 'student';
@@ -302,7 +307,7 @@ function handleCredentialResponse(response) {
   }
 
   setCurrentUser(existing);
-  showAuthMessage(`Увійшли як ${existing.name}`);
+  showAuthMessage(`Увійшли як ${existing.name} (${existing.email}) — роль: ${existing.role}`);
 }
 
 function renderApplication() {
