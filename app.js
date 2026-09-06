@@ -1031,8 +1031,8 @@ function renderTeacherDashboard() {
     return { ok: false, error: 'Canceled' };
   };
 
-  const importBtn = document.getElementById('import-all-json');
-  if (importBtn) importBtn.addEventListener('click', window.importStudentsDumpPrompt);
+  const importBtnInit = document.getElementById('import-all-json');
+  if (importBtnInit) importBtnInit.addEventListener('click', window.importStudentsDumpPrompt);
 
   const answers = selectedStudent.quizAnswers || [];
   const results = selectedStudent.results || [];
