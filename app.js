@@ -754,6 +754,22 @@ function renderTeacherDashboard() {
       <button id="export-to-sheets" class="secondary-btn" type="button">Експорт у Google Sheets</button>
     </div>
   `;
+  // Add import area below export controls
+  const importArea = document.createElement('div');
+  importArea.style.marginTop = '8px';
+  importArea.innerHTML = `
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <small>Імпорт дампу студентів (вставте JSON, збережений з іншого браузера)</small>
+      <textarea id="import-json-text" placeholder="Вставте JSON тут" style="min-height:80px;min-width:300px;max-width:100%;resize:vertical;"></textarea>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button id="import-all-json" class="secondary-btn" type="button">Імпортувати студентовий дамп</button>
+        <button id="import-paste-clear" class="secondary-btn" type="button">Очистити</button>
+      </div>
+    </div>
+  `;
+  elements.teacherDetail.prepend(importArea);
+  const importPasteClear = document.getElementById('import-paste-clear');
+  if (importPasteClear) importPasteClear.addEventListener('click', () => { const ta = document.getElementById('import-json-text'); if (ta) ta.value = ''; });
   elements.teacherDetail.prepend(exportControls);
   elements.teacherStudents.querySelectorAll('[data-student-id]').forEach((button) => {
     button.addEventListener('click', () => {
