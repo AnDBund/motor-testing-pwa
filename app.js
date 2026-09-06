@@ -847,6 +847,7 @@ function renderTeacherDashboard() {
       <button id="export-all-csv" class="secondary-btn" type="button">Експорт усіх студентів (CSV)</button>
       <input id="sheets-endpoint" type="text" placeholder="Apps Script URL (опційно)" style="flex:1;min-width:220px;" />
       <button id="export-to-sheets" class="secondary-btn" type="button">Експорт у Google Sheets</button>
+      <button id="fetch-shared" class="secondary-btn" type="button">Отримати спільні дані</button>
     </div>
   `;
   // Add import area below export controls
@@ -885,6 +886,15 @@ function renderTeacherDashboard() {
       else showAuthMessage(`Помилка експорту: ${res.error}`, true);
     });
   }
+  const fetchBtn = document.getElementById('fetch-shared');
+  if (fetchBtn) {
+    fetchBtn.addEventListener('click', async () => {
+      const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
+      const res = await fetchSharedStudents(endpoint);
+      if (res.ok) showAuthMessage(`Отримано: додано ${res.added || 0}, оновлено ${res.updated || 0}`);
+      else showAuthMessage(`Помилка отримання: ${res.error}`, true);
+    });
+  }
 
   // Import students dump (paste JSON) — available from teacher console/UI if button exists
   window.importStudentsDump = function (text) {
@@ -919,8 +929,13 @@ function renderTeacherDashboard() {
       });
 
       const merged = Object.values(byEmail);
+      // Determine added/updated counts for feedback
+      const prev = JSON.parse(raw || '[]');
+      const prevEmails = new Set(prev.map(u => (u.email||u.login||'').toLowerCase()));
+      const addedCount = merged.filter(u => { const e = (u.email||u.login||'').toLowerCase(); return e && !prevEmails.has(e); }).length;
+      const updatedCount = merged.length - addedCount;
       localStorage.setItem('motor-testing-users', JSON.stringify(merged));
-      showAuthMessage(`Імпортовано: додано ${added}, оновлено ${updated}.`);
+      showAuthMessage(`Імпортовано: додано ${addedCount}, оновлено ${updatedCount}.`);
       // re-render teacher dashboard if open
       if (typeof renderTeacherDashboard === 'function') renderTeacherDashboard();
       return { ok: true, added, updated };
