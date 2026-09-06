@@ -383,6 +383,19 @@ function handleCredentialResponse(response) {
     saveUsers();
   }
 
+  // If Firebase is available, sign into Firebase using the Google ID token
+  (async () => {
+    try {
+      if (firebaseAuth) {
+        const { GoogleAuthProvider, signInWithCredential } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js');
+        const fbCred = GoogleAuthProvider.credential(response.credential);
+        await signInWithCredential(firebaseAuth, fbCred);
+      }
+    } catch (e) {
+      console.warn('Firebase sign-in with Google credential failed:', e);
+    }
+  })();
+
   // If an existing user was found but their role is outdated, upgrade to teacher when whitelisted
   if (existing && role === 'teacher' && existing.role !== 'teacher') {
     existing.role = 'teacher';
