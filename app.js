@@ -367,6 +367,58 @@ function renderStudentProfile() {
 
   const genderText = profile.gender === 'male' ? 'Чоловіча' : 'Жіноча';
   elements.profileSummary.textContent = `Профіль: ${state.currentUser.name} • Стать: ${genderText} • Спеціалізація: ${profile.specialization || 'Не вказано'}`;
+
+  // Add share-to-teacher UI (endpoint input + button)
+  let shareWrap = document.getElementById('share-with-teacher-wrap');
+  if (!shareWrap) {
+    shareWrap = document.createElement('div');
+    shareWrap.id = 'share-with-teacher-wrap';
+    shareWrap.style.marginTop = '8px';
+    shareWrap.innerHTML = `
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <input id="sheets-endpoint-student" type="text" placeholder="Apps Script URL (share)" style="min-width:220px;flex:1;" />
+        <button id="share-with-teacher" class="secondary-btn" type="button">Поділитися з викладачем</button>
+      </div>
+    `;
+    elements.profileSummary.parentElement.appendChild(shareWrap);
+
+    const shareBtn = document.getElementById('share-with-teacher');
+    if (shareBtn) shareBtn.addEventListener('click', async () => {
+      const endpoint = document.getElementById('sheets-endpoint-student')?.value?.trim();
+      const res = await shareCurrentUserToSheets(endpoint);
+      if (res.ok) showAuthMessage('Паспорт надіслано викладачу.');
+      else showAuthMessage(`Помилка надсилання: ${res.error}`, true);
+    });
+  }
+}
+
+async function shareCurrentUserToSheets(endpointUrl) {
+  if (!endpointUrl) return { ok: false, error: 'No endpoint provided' };
+  if (!state.currentUser) return { ok: false, error: 'No current user' };
+  const payload = { students: [ { ...state.currentUser } ] };
+  try {
+    const res = await fetch(endpointUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    if (!res.ok) throw new Error('Request failed');
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: String(e) };
+  }
+}
+
+async function fetchSharedStudents(endpointUrl) {
+  if (!endpointUrl) return { ok: false, error: 'No endpoint' };
+  try {
+    const res = await fetch(endpointUrl);
+    if (!res.ok) throw new Error('Request failed');
+    const json = await res.json();
+    // Accept { students: [...] } or a raw array
+    const incoming = Array.isArray(json) ? json : (json.students || []);
+    // Merge into local storage using existing import helper
+    const mergedResult = window.importStudentsDump ? window.importStudentsDump(JSON.stringify(incoming)) : { ok: false, error: 'import helper missing' };
+    return mergedResult;
+  } catch (e) {
+    return { ok: false, error: String(e) };
+  }
 }
 
 function renderStudentView() {
