@@ -367,7 +367,7 @@ function renderStudentProfile() {
 
   const genderText = profile.gender === 'male' ? 'Чоловіча' : 'Жіноча';
   elements.profileSummary.textContent = `Профіль: ${state.currentUser.name} • Стать: ${genderText} • Спеціалізація: ${profile.specialization || 'Не вказано'}`;
-  // Add share-to-teacher UI (endpoint input + button)
+  // Add share UI: email + download (simpler for students)
   let shareWrap = document.getElementById('share-with-teacher-wrap');
   if (!shareWrap) {
     shareWrap = document.createElement('div');
@@ -375,18 +375,21 @@ function renderStudentProfile() {
     shareWrap.style.marginTop = '8px';
     shareWrap.innerHTML = `
       <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-        <input id="sheets-endpoint-student" type="text" placeholder="Apps Script URL (share)" style="min-width:220px;flex:1;" />
-        <button id="share-with-teacher" class="secondary-btn" type="button">Поділитися з викладачем</button>
+        <button id="share-via-email" class="secondary-btn" type="button">Надіслати електронною поштою</button>
+        <button id="download-passport" class="secondary-btn" type="button">Завантажити JSON паспорта</button>
+        <small style="color:#6b7280;">Альтернатива: вставте JSON у панель викладача вручну.</small>
       </div>
     `;
     elements.profileSummary.parentElement.appendChild(shareWrap);
 
-    const shareBtn = document.getElementById('share-with-teacher');
-    if (shareBtn) shareBtn.addEventListener('click', async () => {
-      const endpoint = document.getElementById('sheets-endpoint-student')?.value?.trim();
-      const res = await shareCurrentUserToSheets(endpoint);
-      if (res.ok) showAuthMessage('Паспорт надіслано викладачу.');
-      else showAuthMessage(`Помилка надсилання: ${res.error}`, true);
+    const emailBtn = document.getElementById('share-via-email');
+    if (emailBtn) emailBtn.addEventListener('click', () => {
+      shareViaEmail(state.currentUser, 'athletica401@gmail.com');
+    });
+
+    const dlBtn = document.getElementById('download-passport');
+    if (dlBtn) dlBtn.addEventListener('click', () => {
+      downloadPassportFile(state.currentUser);
     });
   }
 }
@@ -956,6 +959,45 @@ function buildStudentsCSV(students) {
     }
   });
   return rows.join('\n');
+}
+
+function downloadPassportFile(user) {
+  if (!user) return showAuthMessage('Немає даних для експорту.', true);
+  const data = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    profile: user.profile,
+    quizAnswers: user.quizAnswers || [],
+    results: user.results || [],
+    exportedAt: new Date().toISOString(),
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `${(user.name||'student').replace(/\s+/g,'_')}_passport.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function shareViaEmail(user, teacherEmail) {
+  if (!user) return showAuthMessage('Немає даних для надсилання.', true);
+  const payload = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    profile: user.profile,
+    quizAnswers: user.quizAnswers || [],
+    results: user.results || [],
+    exportedAt: new Date().toISOString(),
+  };
+  const body = encodeURIComponent(JSON.stringify(payload, null, 2));
+  const subject = encodeURIComponent('Паспорт студента — ' + (user.name || 'student'));
+  const mailto = `mailto:${teacherEmail}?subject=${subject}&body=${body}`;
+  window.location.href = mailto;
 }
 
 async function shareCurrentUserToSheets(endpointUrl) {
