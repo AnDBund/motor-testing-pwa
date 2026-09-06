@@ -215,7 +215,7 @@ function handleTeacherLogin() {
   // Prompt Google Identity to sign in the teacher; do not auto-set any local demo user.
   if (window.google && google.accounts && google.accounts.id) {
     google.accounts.id.prompt();
-    showAuthMessage('Будь ласка, увійдіть через Google акаунт викладача (athletica401@gmail.com).');
+    showAuthMessage('Будь ласка, увійдіть через Google акаунт викладача (athletica_401@gmail.com).');
     return;
   }
 
@@ -276,7 +276,7 @@ function handleCredentialResponse(response) {
   const name = payload.name || email.split('@')[0];
 
   // Map Google account to app user; teacher whitelist keeps demo teacher
-  const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['teacher@demo.com'];
+  const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['athletica_401@gmail.com'];
   const role = teacherWhitelist.map((e) => e.toLowerCase()).includes(email) ? 'teacher' : 'student';
 
   let existing = state.users.find((u) => u.email.toLowerCase() === email);
@@ -813,7 +813,7 @@ async function loadAppData() {
     try {
       state.teachersWhitelist = await loadJson('./data/teachers.json');
     } catch (e) {
-      state.teachersWhitelist = ['teacher@demo.com'];
+      state.teachersWhitelist = ['athletica_401@gmail.com'];
     }
 
     if (!state.taskGuide.length) {

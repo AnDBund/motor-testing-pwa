@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta
+      name="description"
+      content="PWA для моніторингу та оцінювання рухових здібностей студентів вищих навчальних закладів"
+    />
+    <title>Моніторинг рухових здібностей</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Motor Testing PWA</p>
+          <h1>Моніторинг рухових здібностей</h1>
+        </div>
+        <div class="header-actions">
+          <span id="online-status" class="status-pill online">Online</span>
+          <button id="logout-button" class="ghost-btn hidden" type="button">Вийти</button>
+        </div>
+      </header>
+
+      <section id="auth-screen" class="card auth-card">
+        <div class="section-heading">
+          <h2>Реєстрація та вхід</h2>
+        </div>
+
+        <form id="auth-form" class="auth-form">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <small>Реєстрація тільки через Gmail; викладачі входять через спеціальну кнопку.</small>
+          </div>
+
+          <label>
+            <span>Ім'я</span>
+            <input id="auth-name" type="text" placeholder="Наприклад: Марія Шевченко" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input id="auth-email" type="email" placeholder="student@gmail.com" required />
+          </label>
+
+          <label>
+            <span>Пароль</span>
+            <input id="auth-password" type="password" placeholder="Введіть пароль" required />
+          </label>
+
+          <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+            <button type="submit" class="primary-btn">Увійти / зареєструватися</button>
+          </div>
+          <div id="googleSignIn" style="margin-top:10px;"></div>
+        </form>
+
+        <div id="auth-message" class="auth-message" aria-live="polite"></div>
+      </section>
+
+      <main id="app-screen" class="content hidden">
+        <nav id="role-tabs" class="role-tabs" aria-label="Ролі користувача">
+          <button type="button" class="tab-btn active" data-role="student">Студент</button>
+          <button type="button" class="tab-btn" data-role="teacher">Викладач</button>
+        </nav>
+
+        <section id="student-view" class="view-panel">
+          <section class="card profile-panel">
+            <div class="section-heading">
+              <h2>Профіль студента</h2>
+            </div>
+
+            <form id="profile-form" class="profile-form">
+              <label>
+                <span>Стать</span>
+                <select id="gender-select">
+                  <option value="male">Чоловіча</option>
+                  <option value="female">Жіноча</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Спеціалізація</span>
+                <input
+                  id="specialization-input"
+                  type="text"
+                  placeholder="Наприклад: легкоатлетика / футбол / гімнастика"
+                  maxlength="80"
+                />
+              </label>
+
+              <button type="submit" class="primary-btn">Зберегти профіль</button>
+            </form>
+
+            <div class="profile-actions" style="margin-top:12px; display:flex; gap:8px;">
+              <button id="history-button" class="secondary-btn" type="button">Історія результатів</button>
+              <button id="export-passport" class="secondary-btn" type="button">Експорт паспорта</button>
+            </div>
+
+            <div id="profile-summary" class="profile-summary"></div>
+          </section>
+
+          <section class="card">
+            <div class="section-heading">
+              <h2>Навчальні модулі</h2>
+            </div>
+            <div id="task-list" class="task-list" aria-live="polite"></div>
+          </section>
+
+          <section class="card evaluation-card">
+            <div class="section-heading">
+              <h2>Оцінювання результатів</h2>
+            </div>
+
+            <div class="evaluation-controls">
+              <label>
+                <span>Тест</span>
+                <select id="test-select"></select>
+              </label>
+
+              <label>
+                <span>Результат</span>
+                <input id="result-input" type="number" step="0.1" min="0" placeholder="Наприклад: 12.5" />
+              </label>
+
+              <button id="evaluate-button" class="primary-btn" type="button">Оцінити</button>
+            </div>
+
+            <div id="evaluation-result" class="result-box hidden"></div>
+          </section>
+
+          <section id="student-history" class="card hidden">
+            <div class="section-heading"><h2>Історія результатів</h2></div>
+            <div id="student-history-list"></div>
+          </section>
+
+          <section class="card task-card">
+            <div class="section-heading">
+              <h2 id="task-title">Теоретичний контроль</h2>
+            </div>
+
+            <p id="task-description" class="task-description"></p>
+            <div id="task-status" class="task-status"></div>
+
+            <label class="response-label" for="task-quiz-response">
+              Відповідь на контрольне запитання
+            </label>
+            <textarea
+              id="task-quiz-response"
+              rows="5"
+              placeholder="Введіть відповідь на контрольне запитання..."
+            ></textarea>
+
+            <button id="quiz-submit" class="secondary-btn" type="button">Перевірити відповідь</button>
+            <div id="quiz-feedback" class="quiz-feedback" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section id="teacher-view" class="view-panel hidden">
+          <section class="card teacher-panel">
+            <div class="section-heading">
+              <h2>Панель викладача</h2>
+            </div>
+
+            <div class="teacher-grid">
+              <aside id="teacher-students" class="teacher-students" aria-live="polite"></aside>
+              <article id="teacher-detail" class="teacher-detail"></article>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="module" src="./app.js?v=3"></script>
+  </body>
+</html>
