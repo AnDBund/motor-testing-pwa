@@ -713,7 +713,11 @@ function getStudentProgress(student) {
 }
 
 function renderTeacherDashboard() {
-  const students = state.users.filter((user) => user.role === 'student');
+  // Treat missing or empty `role` as `student`, and compare case-insensitively
+  const students = state.users.filter((user) => {
+    const role = (user && user.role) ? String(user.role).trim().toLowerCase() : 'student';
+    return role === 'student';
+  });
 
   if (!students.length) {
     elements.teacherStudents.innerHTML = '<div class="teacher-empty">Студентів поки немає.</div>';
