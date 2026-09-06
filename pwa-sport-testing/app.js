@@ -941,6 +941,36 @@ function renderTeacherDashboard() {
         : '<p>Відповіді на завдання відсутні.</p>'}
     </div>
   `;
+
+      // Attach handlers for controls now that elements exist in DOM
+      const csvBtn = document.getElementById('export-all-csv');
+      if (csvBtn) csvBtn.addEventListener('click', exportStudentsCSV);
+      const sheetsBtn = document.getElementById('export-to-sheets');
+      if (sheetsBtn) {
+        sheetsBtn.addEventListener('click', async () => {
+          const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
+          const res = await exportToSheets(endpoint);
+          if (res.ok) showAuthMessage('Дані експортовано в Google Sheets.');
+          else showAuthMessage(`Помилка експорту: ${res.error}`, true);
+        });
+      }
+      const fetchBtn = document.getElementById('fetch-shared');
+      if (fetchBtn) {
+        fetchBtn.addEventListener('click', async () => {
+          const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
+          const res = await fetchSharedStudents(endpoint);
+          if (res.ok) showAuthMessage(`Отримано: додано ${res.added || 0}, оновлено ${res.updated || 0}`);
+          else showAuthMessage(`Помилка отримання: ${res.error}`, true);
+        });
+      }
+
+      const importPasteClear = document.getElementById('import-paste-clear');
+      if (importPasteClear) importPasteClear.addEventListener('click', () => { const ta = document.getElementById('import-json-text'); if (ta) ta.value = ''; });
+      const importBtn = document.getElementById('import-all-json');
+      if (importBtn) importBtn.addEventListener('click', () => {
+        const ta = document.getElementById('import-json-text');
+        if (ta && ta.value) window.importStudentsDump(ta.value.trim());
+      });
 }
 
 function buildStudentsCSV(students) {

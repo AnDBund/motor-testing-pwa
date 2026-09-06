@@ -839,34 +839,7 @@ function renderTeacherDashboard() {
       `;
     })
     .join('');
-  // Add export controls
-  const exportControls = document.createElement('div');
-  exportControls.style.marginTop = '12px';
-  exportControls.innerHTML = `
-    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
-      <button id="export-all-csv" class="secondary-btn" type="button">Експорт усіх студентів (CSV)</button>
-      <input id="sheets-endpoint" type="text" placeholder="Apps Script URL (опційно)" style="flex:1;min-width:220px;" />
-      <button id="export-to-sheets" class="secondary-btn" type="button">Експорт у Google Sheets</button>
-      <button id="fetch-shared" class="secondary-btn" type="button">Отримати спільні дані</button>
-    </div>
-  `;
-  // Add import area below export controls
-  const importArea = document.createElement('div');
-  importArea.style.marginTop = '8px';
-  importArea.innerHTML = `
-    <div style="display:flex;flex-direction:column;gap:6px;">
-      <small>Імпорт дампу студентів (вставте JSON, збережений з іншого браузера)</small>
-      <textarea id="import-json-text" placeholder="Вставте JSON тут" style="min-height:80px;min-width:300px;max-width:100%;resize:vertical;"></textarea>
-      <div style="display:flex;gap:8px;align-items:center;">
-        <button id="import-all-json" class="secondary-btn" type="button">Імпортувати студентовий дамп</button>
-        <button id="import-paste-clear" class="secondary-btn" type="button">Очистити</button>
-      </div>
-    </div>
-  `;
-  elements.teacherDetail.prepend(importArea);
-  const importPasteClear = document.getElementById('import-paste-clear');
-  if (importPasteClear) importPasteClear.addEventListener('click', () => { const ta = document.getElementById('import-json-text'); if (ta) ta.value = ''; });
-  elements.teacherDetail.prepend(exportControls);
+  // Controls will be injected into the detail HTML below to avoid being overwritten
   elements.teacherStudents.querySelectorAll('[data-student-id]').forEach((button) => {
     button.addEventListener('click', () => {
       state.selectedStudentId = button.dataset.studentId;
@@ -874,27 +847,7 @@ function renderTeacherDashboard() {
     });
   });
 
-  // Wire export buttons if present
-  const csvBtn = document.getElementById('export-all-csv');
-  if (csvBtn) csvBtn.addEventListener('click', exportStudentsCSV);
-  const sheetsBtn = document.getElementById('export-to-sheets');
-  if (sheetsBtn) {
-    sheetsBtn.addEventListener('click', async () => {
-      const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
-      const res = await exportToSheets(endpoint);
-      if (res.ok) showAuthMessage('Дані експортовано в Google Sheets.');
-      else showAuthMessage(`Помилка експорту: ${res.error}`, true);
-    });
-  }
-  const fetchBtn = document.getElementById('fetch-shared');
-  if (fetchBtn) {
-    fetchBtn.addEventListener('click', async () => {
-      const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
-      const res = await fetchSharedStudents(endpoint);
-      if (res.ok) showAuthMessage(`Отримано: додано ${res.added || 0}, оновлено ${res.updated || 0}`);
-      else showAuthMessage(`Помилка отримання: ${res.error}`, true);
-    });
-  }
+  // Event handlers for controls will be attached after detail HTML is rendered below
 
   // Import students dump (paste JSON) — available from teacher console/UI if button exists
   window.importStudentsDump = function (text) {
@@ -959,6 +912,22 @@ function renderTeacherDashboard() {
   const progress = getStudentProgress(selectedStudent);
 
   elements.teacherDetail.innerHTML = `
+    <div id="teacher-controls">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+        <button id="export-all-csv" class="secondary-btn" type="button">Експорт усіх студентів (CSV)</button>
+        <input id="sheets-endpoint" type="text" placeholder="Apps Script URL (опційно)" style="flex:1;min-width:220px;" />
+        <button id="export-to-sheets" class="secondary-btn" type="button">Експорт у Google Sheets</button>
+        <button id="fetch-shared" class="secondary-btn" type="button">Отримати спільні дані</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px;">
+        <small>Імпорт дампу студентів (вставте JSON, збережений з іншого браузера)</small>
+        <textarea id="import-json-text" placeholder="Вставте JSON тут" style="min-height:80px;min-width:300px;max-width:100%;resize:vertical;"></textarea>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button id="import-all-json" class="secondary-btn" type="button">Імпортувати студентовий дамп</button>
+          <button id="import-paste-clear" class="secondary-btn" type="button">Очистити</button>
+        </div>
+      </div>
+    </div>
     <div class="teacher-summary">
       <h3>Паспорт студента: ${selectedStudent.name}</h3>
       <p>Email: ${selectedStudent.email}</p>
@@ -1014,6 +983,36 @@ function renderTeacherDashboard() {
         : '<p>Відповіді на завдання відсутні.</p>'}
     </div>
   `;
+
+      // Attach handlers for controls now that elements exist in DOM
+      const csvBtn = document.getElementById('export-all-csv');
+      if (csvBtn) csvBtn.addEventListener('click', exportStudentsCSV);
+      const sheetsBtn = document.getElementById('export-to-sheets');
+      if (sheetsBtn) {
+        sheetsBtn.addEventListener('click', async () => {
+          const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
+          const res = await exportToSheets(endpoint);
+          if (res.ok) showAuthMessage('Дані експортовано в Google Sheets.');
+          else showAuthMessage(`Помилка експорту: ${res.error}`, true);
+        });
+      }
+      const fetchBtn = document.getElementById('fetch-shared');
+      if (fetchBtn) {
+        fetchBtn.addEventListener('click', async () => {
+          const endpoint = document.getElementById('sheets-endpoint')?.value?.trim();
+          const res = await fetchSharedStudents(endpoint);
+          if (res.ok) showAuthMessage(`Отримано: додано ${res.added || 0}, оновлено ${res.updated || 0}`);
+          else showAuthMessage(`Помилка отримання: ${res.error}`, true);
+        });
+      }
+
+      const importPasteClear = document.getElementById('import-paste-clear');
+      if (importPasteClear) importPasteClear.addEventListener('click', () => { const ta = document.getElementById('import-json-text'); if (ta) ta.value = ''; });
+      const importBtn = document.getElementById('import-all-json');
+      if (importBtn) importBtn.addEventListener('click', () => {
+        const ta = document.getElementById('import-json-text');
+        if (ta && ta.value) window.importStudentsDump(ta.value.trim());
+      });
 }
 
 function buildStudentsCSV(students) {
