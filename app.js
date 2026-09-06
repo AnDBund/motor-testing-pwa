@@ -900,6 +900,12 @@ async function initApp() {
   // Load users from storage first
   state.users = readStorage(USERS_KEY, []);
 
+  // Defensive: remove any legacy teacher-login button from the DOM
+  try {
+    const legacyBtn = document.querySelector('#teacher-login-button');
+    if (legacyBtn) legacyBtn.remove();
+  } catch (e) {}
+
   // Load teachers whitelist early so we can sanitize stored users
   try {
     state.teachersWhitelist = await loadJson('./data/teachers.json');
