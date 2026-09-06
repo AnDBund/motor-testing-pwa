@@ -713,10 +713,10 @@ function getStudentProgress(student) {
 }
 
 function renderTeacherDashboard() {
-  // Treat missing or empty `role` as `student`, and compare case-insensitively
+  // Show all users except those explicitly marked as 'teacher' (case-insensitive)
   const students = state.users.filter((user) => {
-    const role = (user && user.role) ? String(user.role).trim().toLowerCase() : 'student';
-    return role === 'student';
+    const role = (user && user.role) ? String(user.role).trim().toLowerCase() : '';
+    return role !== 'teacher';
   });
 
   if (!students.length) {
