@@ -37,6 +37,28 @@ function doPost(e) {
 }
 ```
 
+// Optional: simple GET endpoint to read stored rows as JSON
+function doGet(e) {
+  try {
+    const ss = SpreadsheetApp.openById('YOUR_SHEET_ID');
+    const sheet = ss.getSheetByName('Sheet1') || ss.getSheets()[0];
+    const rows = sheet.getDataRange().getValues();
+    const headers = rows.shift() || [];
+    const students = rows.map(r => {
+      const obj = {};
+      headers.forEach((h, i) => { obj[h] = r[i]; });
+      return obj;
+    });
+    return ContentService
+      .createTextOutput(JSON.stringify({ students }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ ok: false, error: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
 Deployment steps
 1. Open https://script.google.com and create a new project.
 2. Paste the script above and replace `YOUR_SHEET_ID` with the target sheet ID from the sheet URL.
