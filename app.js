@@ -295,6 +295,12 @@ function handleCredentialResponse(response) {
     saveUsers();
   }
 
+  // If an existing user was found but their role is outdated, upgrade to teacher when whitelisted
+  if (existing && role === 'teacher' && existing.role !== 'teacher') {
+    existing.role = 'teacher';
+    saveUsers();
+  }
+
   setCurrentUser(existing);
   showAuthMessage(`Увійшли як ${existing.name}`);
 }
@@ -921,6 +927,15 @@ async function initApp() {
       return whitelist.includes(u.email.toLowerCase());
     }
     return true;
+  });
+
+  // Ensure any existing user whose email is whitelisted gets teacher role
+  state.users.forEach((u) => {
+    try {
+      if (u && u.email && whitelist.includes(u.email.toLowerCase())) {
+        u.role = 'teacher';
+      }
+    } catch (e) {}
   });
 
   // If no users remain, seed demo students only
