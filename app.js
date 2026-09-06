@@ -1077,13 +1077,17 @@ async function initApp() {
       state.teachersWhitelist = ['athletica401@gmail.com'];
     }
 
-  // Remove any stored teacher accounts that are NOT in the whitelist
+  // Remove any stored teacher accounts that are NOT in the whitelist.
+  // Keep all other users (students) even if `email` is missing — do not drop student records.
   const whitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist.map((e) => e.toLowerCase()) : [];
   state.users = state.users.filter((u) => {
-    if (!u || !u.email) return false;
-    if (u.role && u.role.toLowerCase() === 'teacher') {
-      return whitelist.includes(u.email.toLowerCase());
+    if (!u) return false;
+    const role = (u.role || '').toString().trim().toLowerCase();
+    if (role === 'teacher') {
+      // teacher must have an email and be whitelisted
+      return !!u.email && whitelist.includes(u.email.toLowerCase());
     }
+    // keep students and other roles, even when email is absent
     return true;
   });
 
