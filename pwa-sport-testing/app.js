@@ -82,6 +82,17 @@ async function initFirebaseIfConfigured() {
       console.log('Firebase initialized:', { projectId: fbConfig.projectId, authDomain: fbConfig.authDomain });
     } catch (e) {}
 
+    // If current user exists and is student, push to Firestore
+    if (state.currentUser) {
+      if (state.currentUser.email && state.currentUser.password) {
+        syncUserWithFirebaseAuth(state.currentUser.email, state.currentUser.password, false).then(() => {
+          saveUserToFirestore(state.currentUser).catch(() => {});
+        }).catch(() => {});
+      } else {
+        saveUserToFirestore(state.currentUser).catch(() => {});
+      }
+    }
+
     const origSaveUsers = saveUsers;
     saveUsers = function () {
       origSaveUsers();
@@ -92,6 +103,52 @@ async function initFirebaseIfConfigured() {
     return true;
   } catch (err) {
     throw err;
+  }
+}
+
+async function syncUserWithFirebaseAuth(email, password, isNewRegistration) {
+  // Wait up to 3 seconds for firebaseAuth to initialize if needed
+  for (let i = 0; i < 10; i++) {
+    if (firebaseAuth) break;
+    await new Promise((resolve) => setTimeout(resolve, 300));
+  }
+  if (!firebaseAuth) {
+    console.warn('Firebase Auth is not initialized yet.');
+    return;
+  }
+  try {
+    const { createUserWithEmailAndPassword, signInWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js');
+    if (isNewRegistration) {
+      try {
+        await createUserWithEmailAndPassword(firebaseAuth, email, password);
+        console.log('Firebase Auth: registered new user', email);
+      } catch (err) {
+        if (err.code === 'auth/email-already-in-use') {
+          await signInWithEmailAndPassword(firebaseAuth, email, password);
+          console.log('Firebase Auth: user already exists, signed in', email);
+        } else {
+          throw err;
+        }
+      }
+    } else {
+      try {
+        await signInWithEmailAndPassword(firebaseAuth, email, password);
+        console.log('Firebase Auth: signed in existing user', email);
+      } catch (err) {
+        if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') {
+          try {
+            await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            console.log('Firebase Auth: user not found in auth db, created on-demand', email);
+          } catch (createErr) {
+            console.warn('Firebase Auth: on-demand creation failed', createErr);
+          }
+        } else {
+          throw err;
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Firebase Auth sync failed:', e);
   }
 }
 
@@ -264,6 +321,12 @@ function handleAuthSubmit(event) {
 
     setCurrentUser(existingUser);
     showAuthMessage(`Ласкаво просимо, ${existingUser.name}!`);
+    // Run background Firebase Auth sync and save to Firestore
+    syncUserWithFirebaseAuth(normalizedEmail, password, false).then(() => {
+      if (state.currentUser) {
+        saveUserToFirestore(state.currentUser).catch(() => {});
+      }
+    }).catch(() => {});
     return;
   }
 
@@ -287,6 +350,12 @@ function handleAuthSubmit(event) {
   saveUsers();
   setCurrentUser(newUser);
   showAuthMessage(`Обліковий запис ${newUser.name} створено успішно.`);
+  // Run background Firebase Auth sync and save to Firestore
+  syncUserWithFirebaseAuth(normalizedEmail, password, true).then(() => {
+    if (state.currentUser) {
+      saveUserToFirestore(state.currentUser).catch(() => {});
+    }
+  }).catch(() => {});
 }
 
 function logout() {
