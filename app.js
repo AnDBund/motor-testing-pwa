@@ -502,7 +502,11 @@ async function handleAuthSubmit(event) {
     existingUser.role = role;
     // Always update teacherId for students (explicit from form/URL)
     if (role === 'student') {
-      existingUser.teacherId = explicitTeacherId || existingUser.teacherId || '';
+      // If explicitTeacherId is provided in form/URL, use it.
+      // Otherwise, fall back to the current authenticated teacher's UID
+      // or the current user's UID to ensure students are always assigned to an instructor.
+      const teacherUid = firebaseAuth?.currentUser?.uid || state.currentUser?.uid || state.currentUser?.id || '';
+      existingUser.teacherId = explicitTeacherId || teacherUid || existingUser.teacherId || '';
     }
     saveUsers();
     setCurrentUser(existingUser);
@@ -523,8 +527,9 @@ async function handleAuthSubmit(event) {
     email: normalizedEmail,
     password: password,
     role: role,
-    // teacherId comes ONLY from the registration form/URL, never from current teacher session
-    teacherId: role === 'student' ? explicitTeacherId : '',
+    // teacherId comes from the registration form/URL, falling back to the current authenticated teacher's UID
+    // so students are always properly assigned to an instructor.
+    teacherId: role === 'student' ? (explicitTeacherId || firebaseAuth?.currentUser?.uid || state.currentUser?.uid || '') : '',
     profile: {
       gender: 'male',
       specialization: 'Легка атлетика',
@@ -704,7 +709,11 @@ async function processSuccessfulFirebaseAuth(authUser) {
     existing.role = role;
     // Always update teacherId for students (explicit from form/URL)
     if (role === 'student') {
-      existing.teacherId = explicitTeacherId || existing.teacherId || '';
+      // If explicitTeacherId is provided in form/URL, use it.
+      // Otherwise, fall back to the current authenticated teacher's UID
+      // or the current user's UID to ensure students are always assigned to an instructor.
+      const teacherUid = firebaseAuth?.currentUser?.uid || state.currentUser?.uid || state.currentUser?.id || '';
+      existing.teacherId = explicitTeacherId || teacherUid || existing.teacherId || '';
     }
   }
 
@@ -761,8 +770,8 @@ async function handleCredentialResponse(response) {
       name,
       displayName: name,
       email,
-      role,
-      teacherId: role === 'student' ? explicitTeacherId : '',
+            role,
+      teacherId: role === 'student' ? (explicitTeacherId || firebaseAuth?.currentUser?.uid || '') : '',
       profile: { gender: 'male', specialization: '' },
       quizAnswers: [],
       results: [],
