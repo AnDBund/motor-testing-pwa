@@ -22,6 +22,7 @@ const elements = {
   authName: document.querySelector('#auth-name'),
   authEmail: document.querySelector('#auth-email'),
   authPassword: document.querySelector('#auth-password'),
+  authTeacherId: document.querySelector('#auth-teacher-id'),
   authMessage: document.querySelector('#auth-message'),
   googleSignInContainer: document.querySelector('#googleSignIn'),
   googleLoginButton: document.querySelector('#google-login-button'),

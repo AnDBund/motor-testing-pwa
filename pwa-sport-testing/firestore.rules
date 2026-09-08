@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      // User can read their own document
+      // Teacher can read documents where teacherId matches teacher's auth UID or teacher's email
+      allow read: if request.auth != null && (
+        request.auth.uid == userId ||
+        resource.data.teacherId == request.auth.uid ||
+        resource.data.teacherId == request.auth.token.email
+      );
+
+      // User can create or update their own document
+      allow create, update: if request.auth != null && request.auth.uid == userId;
+
+      // User can delete their own document
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
