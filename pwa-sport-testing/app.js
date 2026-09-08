@@ -83,21 +83,32 @@ async function initFirebaseIfConfigured() {
       console.log('Firebase initialized:', { projectId: fbConfig.projectId, authDomain: fbConfig.authDomain });
     } catch (e) {}
 
-    // If current user exists and is student, push to Firestore
-    if (state.currentUser) {
+    // If current user exists and has a valid Firebase UID, push to Firestore
+    if (state.currentUser && state.currentUser.uid && !state.currentUser.uid.startsWith('user-')) {
       if (state.currentUser.email && state.currentUser.password) {
         syncUserWithFirebaseAuth(state.currentUser.email, state.currentUser.password, false).then(() => {
-          saveUserToFirestore(state.currentUser).catch(() => {});
+          saveUserToFirestore(state.currentUser).catch((err) => {
+            console.warn('Failed to push current user to Firestore after sync:', err);
+          });
         }).catch(() => {});
       } else {
-        saveUserToFirestore(state.currentUser).catch(() => {});
+        saveUserToFirestore(state.currentUser).catch((err) => {
+          console.warn('Failed to push current user to Firestore on init:', err);
+        });
       }
     }
 
     const origSaveUsers = saveUsers;
     saveUsers = function () {
       origSaveUsers();
-      try { state.users.forEach((u) => { if (u && u.email) saveUserToFirestore(u).catch(() => {}); }); } catch (e) {}
+      try {
+        // Only push the CURRENT authenticated user's data to Firestore.
+        if (state.currentUser && state.currentUser.uid && state.currentUser.email) {
+          saveUserToFirestore(state.currentUser).catch((err) => {
+            console.warn('Failed to push current user to Firestore on saveUsers:', err);
+          });
+        }
+      } catch (e) {}
     };
 
     if (state.currentUser && (state.currentUser.role || '').toLowerCase() === 'teacher') subscribeToFirestoreUsers();
@@ -155,39 +166,115 @@ async function syncUserWithFirebaseAuth(email, password, isNewRegistration) {
 
 async function saveUserToFirestore(user) {
   if (!firebaseDb || !user || !user.email) return;
+  // Use Firebase Auth UID as the document ID; if user has no real Firebase UID, skip
+  const uid = user.uid || (firebaseAuth && firebaseAuth.currentUser && firebaseAuth.currentUser.uid);
+  if (!uid) return;
+
   try {
     const { doc, setDoc } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
-    const id = user.id || user.email;
-    await setDoc(doc(firebaseDb, 'users', id), normalizeUserForFirestore(user), { merge: true });
-    console.log('Saved user to Firestore:', id);
+    await setDoc(doc(firebaseDb, 'users', uid), normalizeUserForFirestore(user), { merge: true });
+    console.log('Saved user to Firestore at users/' + uid);
   } catch (e) {
     console.warn('Failed to save user to Firestore', e);
   }
 }
 
 function normalizeUserForFirestore(u) {
-  return { id: u.id, name: u.name, email: u.email, role: u.role || 'student', profile: u.profile || {}, quizAnswers: u.quizAnswers || [], results: u.results || [], createdAt: u.createdAt || new Date().toISOString() };
+  const uid = u.uid || (firebaseAuth && firebaseAuth.currentUser && firebaseAuth.currentUser.uid) || u.id;
+  const email = (u.email || (firebaseAuth && firebaseAuth.currentUser && firebaseAuth.currentUser.email) || '').toLowerCase();
+  const displayName = u.displayName || u.name || (firebaseAuth && firebaseAuth.currentUser && firebaseAuth.currentUser.displayName) || (email ? email.split('@')[0] : '');
+  const role = u.role || 'student';
+  // teacherId MUST come explicitly from the user object (set via form/URL in registration)
+  const teacherId = (role === 'student' ? (u.teacherId || '') : (u.teacherId || ''));
+  const createdAt = u.createdAt || new Date().toISOString();
+
+  return {
+    uid: uid,
+    email: email,
+    displayName: displayName,
+    role: role,
+    teacherId: teacherId,
+    createdAt: createdAt,
+    id: uid,
+    name: displayName,
+    profile: u.profile || { gender: 'male', specialization: '' },
+    quizAnswers: u.quizAnswers || [],
+    results: u.results || [],
+    updatedAt: new Date().toISOString(),
+  };
 }
 
 async function subscribeToFirestoreUsers() {
   if (!firebaseDb) return;
+  if (firebaseUnsubscribeUsers) {
+    try { firebaseUnsubscribeUsers(); } catch (e) {}
+    firebaseUnsubscribeUsers = null;
+  }
+
+  const currentTeacherUid = firebaseAuth?.currentUser?.uid || state.currentUser?.uid || state.currentUser?.id;
+  const currentTeacherEmail = (firebaseAuth?.currentUser?.email || state.currentUser?.email || '').toLowerCase();
+  if (!currentTeacherUid && !currentTeacherEmail) return;
+
   try {
-    const { collection, onSnapshot } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
-    const col = collection(firebaseDb, 'users');
-    firebaseUnsubscribeUsers = onSnapshot(col, (snapshot) => {
+    const { collection, query, where, onSnapshot } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js');
+    const usersCol = collection(firebaseDb, 'users');
+
+    const handleSnapshot = (snapshot) => {
       const incoming = [];
-      snapshot.forEach((d) => incoming.push(d.data()));
+      snapshot.forEach((docSnap) => {
+        const data = docSnap.data();
+        if (data) {
+          incoming.push({
+            id: data.uid || docSnap.id,
+            uid: data.uid || docSnap.id,
+            name: data.displayName || data.name || data.email,
+            displayName: data.displayName || data.name || data.email,
+            ...data,
+          });
+        }
+      });
+
       const raw = localStorage.getItem(USERS_KEY) || '[]';
       const stored = JSON.parse(raw);
       const byId = {};
-      stored.forEach(s => { if (s && s.email) byId[(s.email||s.id).toLowerCase()] = s; });
-      incoming.forEach(i => { if (i && (i.email||i.id)) byId[(i.email||i.id).toLowerCase()] = i; });
+      stored.forEach((s) => {
+        if (s && (s.uid || s.id || s.email)) {
+          const key = (s.uid || s.id || s.email).toLowerCase();
+          byId[key] = s;
+        }
+      });
+      incoming.forEach((i) => {
+        if (i && (i.uid || i.id || i.email)) {
+          const key = (i.uid || i.id || i.email).toLowerCase();
+          byId[key] = Object.assign({}, byId[key] || {}, i);
+        }
+      });
       const merged = Object.values(byId);
       localStorage.setItem(USERS_KEY, JSON.stringify(merged));
       state.users = merged;
       if (typeof renderTeacherDashboard === 'function') renderTeacherDashboard();
-    });
-  } catch (e) { console.warn('subscribeToFirestoreUsers failed', e); }
+    };
+
+    // Query by teacher's Firebase UID (primary method)
+    if (currentTeacherUid) {
+      const qUid = query(usersCol, where('teacherId', '==', currentTeacherUid));
+      firebaseUnsubscribeUsers = onSnapshot(qUid, handleSnapshot, (err) => {
+        console.warn('Firestore snapshot UID listener error:', err);
+      });
+    }
+
+    // Also query by teacher's email (fallback for backward compatibility)
+    if (currentTeacherEmail && currentTeacherEmail !== currentTeacherUid) {
+      const qEmail = query(usersCol, where('teacherId', '==', currentTeacherEmail));
+      const emailUnsub = onSnapshot(qEmail, handleSnapshot, (err) => {
+        console.warn('Firestore snapshot email listener error:', err);
+      });
+      if (!window._mt) window._mt = {};
+      window._mt._firestoreEmailUnsub = emailUnsub;
+    }
+  } catch (e) {
+    console.warn('subscribeToFirestoreUsers failed', e);
+  }
 }
 
 function setOnlineStatus() {
@@ -294,6 +381,7 @@ function handleAuthSubmit(event) {
   const name = elements.authName.value.trim();
   const email = elements.authEmail.value.trim();
   const password = elements.authPassword.value.trim();
+  const explicitTeacherId = elements.authTeacherId?.value?.trim() || '';
 
   if (!name || !email || !password) {
     showAuthMessage('Заповніть усі поля для реєстрації або входу.', true);
@@ -312,51 +400,156 @@ function handleAuthSubmit(event) {
     showAuthMessage('Пароль має містити принаймні 8 символів, одну літеру та одну цифру.', true);
     return;
   }
-  let existingUser = state.users.find((user) => user.email.toLowerCase() === normalizedEmail);
 
-  if (existingUser) {
-    if (existingUser.password !== password) {
-      showAuthMessage('Пароль не співпадає. Спробуйте ще раз.', true);
+  // Run Firebase Auth sync first to get a real UID
+  (async () => {
+    try {
+      if (firebaseAuth) {
+        const { createUserWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js');
+        try {
+          await createUserWithEmailAndPassword(firebaseAuth, normalizedEmail, password);
+        } catch (authErr) {
+          if (authErr.code === 'auth/email-already-in-use') {
+            await syncUserWithFirebaseAuth(normalizedEmail, password, false);
+          } else {
+            console.warn('Firebase Auth create error:', authErr);
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Firebase Auth sync during handleAuthSubmit:', e);
+    }
+
+    const authUser = firebaseAuth?.currentUser;
+    const uid = authUser ? authUser.uid : `user-${Date.now()}`;
+
+    let existingUser = state.users.find((user) => user.email.toLowerCase() === normalizedEmail);
+
+    if (existingUser) {
+      if (existingUser.password !== password) {
+        showAuthMessage('Пароль не співпадає. Спробуйте ще раз.', true);
+        return;
+      }
+
+      if (authUser) {
+        existingUser.uid = authUser.uid;
+        existingUser.id = authUser.uid;
+        existingUser.displayName = existingUser.name;
+        if ((existingUser.role || 'student') === 'student') {
+          existingUser.teacherId = explicitTeacherId || existingUser.teacherId || '';
+        }
+      }
+
+      setCurrentUser(existingUser);
+      showAuthMessage(`Ласкаво просимо, ${existingUser.name}!`);
+
+      if (firebaseDb) {
+        saveUserToFirestore(existingUser).catch((err) => {
+          console.warn('Failed to save existing user to Firestore:', err);
+        });
+      }
       return;
     }
 
-    setCurrentUser(existingUser);
-    showAuthMessage(`Ласкаво просимо, ${existingUser.name}!`);
-    // Run background Firebase Auth sync and save to Firestore
-    syncUserWithFirebaseAuth(normalizedEmail, password, false).then(() => {
-      if (state.currentUser) {
-        saveUserToFirestore(state.currentUser).catch(() => {});
-      }
-    }).catch(() => {});
+    // New registrations are always students
+    const newUser = {
+      id: uid,
+      uid: uid,
+      name,
+      displayName: name,
+      email: normalizedEmail,
+      password,
+      role: 'student',
+      teacherId: explicitTeacherId,
+      profile: {
+        gender: 'male',
+        specialization: 'Легка атлетика',
+      },
+      quizAnswers: [],
+      results: [],
+      createdAt: new Date().toISOString(),
+    };
+
+    state.users.push(newUser);
+    saveUsers();
+    setCurrentUser(newUser);
+    showAuthMessage(`Обліковий запис ${newUser.name} створено успішно.`);
+
+    if (firebaseDb) {
+      await saveUserToFirestore(newUser);
+    }
+  })();
+}
+async function handleGoogleSignInPopup() {
+  if (!firebaseAuth) {
+    showAuthMessage('Firebase Auth ще не ініціалізовано. Спробуйте за мить.', true);
     return;
   }
-
-  // New registrations are always students
-  const newUser = {
-    id: `user-${Date.now()}`,
-    name,
-    email: normalizedEmail,
-    password,
-    role: 'student',
-    profile: {
-      gender: 'male',
-      specialization: 'Легка атлетика',
-    },
-    quizAnswers: [],
-    results: [],
-    createdAt: new Date().toISOString(),
-  };
-
-  state.users.push(newUser);
-  saveUsers();
-  setCurrentUser(newUser);
-  showAuthMessage(`Обліковий запис ${newUser.name} створено успішно.`);
-  // Run background Firebase Auth sync and save to Firestore
-  syncUserWithFirebaseAuth(normalizedEmail, password, true).then(() => {
-    if (state.currentUser) {
-      saveUserToFirestore(state.currentUser).catch(() => {});
+  try {
+    const { GoogleAuthProvider, signInWithPopup } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js');
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    const userCredential = await signInWithPopup(firebaseAuth, provider);
+    if (userCredential && userCredential.user) {
+      await processSuccessfulFirebaseAuth(userCredential.user);
     }
-  }).catch(() => {});
+  } catch (err) {
+    console.warn('Google signInWithPopup error:', err);
+    if (err.code !== 'auth/popup-closed-by-user') {
+      showAuthMessage(`Помилка входу через Google: ${err.message}`, true);
+    }
+  }
+}
+
+async function processSuccessfulFirebaseAuth(authUser) {
+  const email = (authUser.email || '').toLowerCase();
+  const displayName = authUser.displayName || email.split('@')[0];
+  const uid = authUser.uid;
+
+  // Determine role: teacher if whitelisted, else student
+  const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['athletica401@gmail.com'];
+  const normalizedEmail = normalizeGmail(email);
+  const normalizedWhitelist = teacherWhitelist.map((e) => normalizeGmail(String(e).toLowerCase()));
+  const isTeacher = teacherWhitelist.map((e) => String(e).toLowerCase()).includes(email) || normalizedWhitelist.includes(normalizedEmail);
+  const role = isTeacher ? 'teacher' : 'student';
+  const explicitTeacherId = elements.authTeacherId?.value?.trim() || '';
+
+  let existing = state.users.find((u) => (u.uid && u.uid === uid) || (u.email && u.email.toLowerCase() === email));
+  if (!existing) {
+    existing = {
+      id: uid,
+      uid: uid,
+      name: displayName,
+      displayName: displayName,
+      email: email,
+      role: role,
+      teacherId: role === 'student' ? explicitTeacherId : '',
+      profile: { gender: 'male', specialization: '' },
+      quizAnswers: [],
+      results: [],
+      createdAt: authUser.metadata?.creationTime ? new Date(authUser.metadata.creationTime).toISOString() : new Date().toISOString(),
+    };
+    state.users.push(existing);
+  } else {
+    existing.uid = uid;
+    existing.id = uid;
+    existing.name = displayName || existing.name;
+    existing.displayName = existing.name;
+    existing.role = role;
+    // Always update teacherId for students (explicit from form/URL)
+    if (role === 'student') {
+      existing.teacherId = explicitTeacherId || existing.teacherId || '';
+    }
+  }
+
+  saveUsers();
+
+  if (firebaseDb) {
+    await saveUserToFirestore(existing);
+  }
+
+  setCurrentUser(existing);
+  showAuthMessage(`Увійшли як ${existing.name} (${existing.email}) — роль: ${existing.role}`);
 }
 
 function logout() {
@@ -447,7 +640,11 @@ function initGoogleSignIn(clientId) {
   tryInit();
 
   if (fallbackButton) {
-    fallbackButton.addEventListener('click', () => {
+    fallbackButton.addEventListener('click', async () => {
+      if (firebaseAuth) {
+        await handleGoogleSignInPopup();
+        return;
+      }
       if (window.google && google.accounts && google.accounts.id) {
         google.accounts.id.prompt();
         showAuthMessage('Відкривається вікно Google Sign-In.');
@@ -468,55 +665,70 @@ function handleCredentialResponse(response) {
 
   const email = payload.email.toLowerCase();
   const name = payload.name || email.split('@')[0];
+  const explicitTeacherId = elements.authTeacherId?.value?.trim() || '';
 
-  // Map Google account to app user; teacher whitelist keeps demo teacher
-  const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['athletica401@gmail.com'];
-  const normalizedEmail = normalizeGmail(email);
-  const normalizedWhitelist = teacherWhitelist.map((e) => normalizeGmail(String(e).toLowerCase()));
-  const role = teacherWhitelist.map((e) => String(e).toLowerCase()).includes(email) || normalizedWhitelist.includes(normalizedEmail) ? 'teacher' : 'student';
-
-  let existing = state.users.find((u) => u.email.toLowerCase() === email);
-  if (!existing) {
-    existing = {
-      id: `user-google-${payload.sub}`,
-      name,
-      email,
-      role,
-      profile: { gender: 'male', specialization: '' },
-      quizAnswers: [],
-      results: [],
-      createdAt: new Date().toISOString(),
-    };
-    state.users.push(existing);
-    saveUsers();
-  }
-
-  // If Firebase is available, sign into Firebase using the Google ID token
+  // Try Firebase sign-in first
   (async () => {
     try {
       if (firebaseAuth) {
         const { GoogleAuthProvider, signInWithCredential } = await import('https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js');
         const fbCred = GoogleAuthProvider.credential(response.credential);
-        await signInWithCredential(firebaseAuth, fbCred);
+        const userCredential = await signInWithCredential(firebaseAuth, fbCred);
+        if (userCredential && userCredential.user) {
+          await processSuccessfulFirebaseAuth(userCredential.user);
+          return;
+        }
       }
     } catch (e) {
       console.warn('Firebase sign-in with Google credential failed:', e);
     }
+
+    // Fallback: save to local storage + Firestore
+    const teacherWhitelist = Array.isArray(state.teachersWhitelist) ? state.teachersWhitelist : ['athletica401@gmail.com'];
+    const normalizedEmail = normalizeGmail(email);
+    const normalizedWhitelist = teacherWhitelist.map((e) => normalizeGmail(String(e).toLowerCase()));
+    const role = teacherWhitelist.map((e) => String(e).toLowerCase()).includes(email) || normalizedWhitelist.includes(normalizedEmail) ? 'teacher' : 'student';
+
+    let existing = state.users.find((u) => u.email.toLowerCase() === email);
+    if (!existing) {
+      existing = {
+        id: `user-google-${payload.sub}`,
+        uid: `user-google-${payload.sub}`,
+        name,
+        displayName: name,
+        email,
+        role,
+        teacherId: role === 'student' ? explicitTeacherId : '',
+        profile: { gender: 'male', specialization: '' },
+        quizAnswers: [],
+        results: [],
+        createdAt: new Date().toISOString(),
+      };
+      state.users.push(existing);
+      saveUsers();
+      if (firebaseDb) {
+        saveUserToFirestore(existing).catch((err) => {
+          console.warn('Failed to save Google One-Tap user to Firestore:', err);
+        });
+      }
+    } else {
+      existing.role = role;
+      saveUsers();
+      if (firebaseDb) {
+        saveUserToFirestore(existing).catch((err) => {
+          console.warn('Failed to update Google One-Tap user in Firestore:', err);
+        });
+      }
+    }
+
+    // Save raw Google payload for debugging
+    try {
+      localStorage.setItem('motor-testing-last-google', JSON.stringify(payload));
+    } catch (e) {}
+
+    setCurrentUser(existing);
+    showAuthMessage(`Увійшли як ${existing.name} (${existing.email}) — роль: ${existing.role}`);
   })();
-
-  // If an existing user was found but their role is outdated, upgrade to teacher when whitelisted
-  if (existing && role === 'teacher' && existing.role !== 'teacher') {
-    existing.role = 'teacher';
-    saveUsers();
-  }
-
-  // Save raw Google payload for debugging (helps verify which email Google returned)
-  try {
-    localStorage.setItem('motor-testing-last-google', JSON.stringify(payload));
-  } catch (e) {}
-
-  setCurrentUser(existing);
-  showAuthMessage(`Увійшли як ${existing.name} (${existing.email}) — роль: ${existing.role}`);
 }
 
 function renderApplication() {
@@ -933,10 +1145,16 @@ function getStudentProgress(student) {
 }
 
 function renderTeacherDashboard() {
-  // Show all users except those explicitly marked as 'teacher' (case-insensitive)
+  // Determine the current teacher's identifier (UID or email)
+  const currentTeacherUid = firebaseAuth?.currentUser?.uid || state.currentUser?.uid || state.currentUser?.id || '';
+  const currentTeacherEmail = (firebaseAuth?.currentUser?.email || state.currentUser?.email || '').toLowerCase();
+
+  // Show only students assigned to this teacher (by teacherId).
   const students = state.users.filter((user) => {
     const role = (user && user.role) ? String(user.role).trim().toLowerCase() : '';
-    return role !== 'teacher';
+    if (role === 'teacher') return false;
+    const tId = (user.teacherId || '').toString().toLowerCase().trim();
+    return tId === currentTeacherUid.toLowerCase() || (currentTeacherEmail && tId === currentTeacherEmail);
   });
 
   if (!students.length) {
