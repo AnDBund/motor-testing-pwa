@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
+ <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0f766e" />
@@ -12,6 +12,7 @@
     <link rel="manifest" href="./manifest.json" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -37,7 +38,7 @@
             <input id="auth-teacher-id" type="text" placeholder="athletica401@gmail.com або ID викладача" style="width: 100%; box-sizing: border-box;" />
           </label>
 
-          <div id="googleSignIn" style="min-height: 44px;"></div>
+          <div id="googleSignIn" class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with" data-size="large"></div>
         </div>
 
         <div id="auth-message" class="auth-message" aria-live="polite"></div>
