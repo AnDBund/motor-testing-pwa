@@ -1651,7 +1651,7 @@ async function loadAppData() {
 }
 
 function bindEvents() {
-  elements.authForm.addEventListener('submit', handleAuthSubmit);
+  if (elements.authForm) elements.authForm.addEventListener('submit', handleAuthSubmit);
   if (elements.teacherLoginButton) elements.teacherLoginButton.addEventListener('click', handleTeacherLogin);
   elements.logoutButton.addEventListener('click', logout);
 
