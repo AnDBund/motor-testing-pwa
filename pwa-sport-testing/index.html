@@ -17,11 +17,9 @@
     <div class="app-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">Motor Testing PWA</p>
           <h1>Моніторинг рухових здібностей</h1>
         </div>
         <div class="header-actions">
-          <span id="online-status" class="status-pill online">Online</span>
           <button id="logout-button" class="ghost-btn hidden" type="button">Вийти</button>
         </div>
       </header>
@@ -31,38 +29,12 @@
           <h2>Реєстрація та вхід</h2>
         </div>
 
-        <form id="auth-form" class="auth-form">
-          <div style="display:flex;gap:8px;align-items:center;">
-            <small>Реєстрація тільки через Gmail; викладачі входять через спеціальну кнопку.</small>
-          </div>
-
-          <label>
-            <span>Ім'я</span>
-            <input id="auth-name" type="text" placeholder="Наприклад: Марія Шевченко" required />
-          </label>
-
-          <label>
-            <span>Email</span>
-            <input id="auth-email" type="email" placeholder="student@gmail.com" required />
-          </label>
-
-          <label>
-            <span>Пароль</span>
-            <input id="auth-password" type="password" placeholder="Введіть пароль" required />
-          </label>
-
-          <label>
-            <span>ID викладача (опціонально)</span>
-            <input id="auth-teacher-id" type="text" placeholder="athletica401@gmail.com або ID викладача" />
-          </label>
+        <label>
+          <span>ID викладача (опціонально)</span>
+          <input id="auth-teacher-id" type="text" placeholder="athletica401@gmail.com або ID викладача" />
+        </label>
 
           <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
-            <button type="submit" class="primary-btn">Увійти / зареєструватися</button>
-          </div>
-          <div id="google-signin-wrap" style="margin-top:10px; display:flex; justify-content:flex-start;">
-            <button id="google-login-button" type="button" class="secondary-btn google-login-btn">
-              Увійти через Google
-            </button>
             <div id="googleSignIn" style="margin-top:0;"></div>
           </div>
         </form>
