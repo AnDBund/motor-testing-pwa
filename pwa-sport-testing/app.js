@@ -627,11 +627,16 @@ function initGoogleSignIn(clientId) {
       callback: handleCredentialResponse,
     });
 
-    const container = document.getElementById('googleSignIn');
+const container = document.getElementById('googleSignIn');
     if (container) {
-      google.accounts.id.renderButton(container, { theme: 'outline', size: 'large', width: 280 });
+      google.accounts.id.renderButton(container, { 
+        theme: 'outline', 
+        size: 'large', 
+        width: 280 
+      });
     }
 
+    const fallbackButton = document.getElementById('google-login-button');
     if (fallbackButton) {
       fallbackButton.hidden = true;
     }

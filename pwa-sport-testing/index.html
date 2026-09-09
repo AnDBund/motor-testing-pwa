@@ -24,20 +24,21 @@
         </div>
       </header>
 
-      <section id="auth-screen" class="card auth-card">
+<section id="auth-screen" class="card auth-card">
         <div class="section-heading">
           <h2>Реєстрація та вхід</h2>
         </div>
 
-        <label>
-          <span>ID викладача (опціонально)</span>
-          <input id="auth-teacher-id" type="text" placeholder="athletica401@gmail.com або ID викладача" />
-        </label>
+        <div style="margin-bottom: 16px;">
+          <p style="margin: 0 0 12px 0; font-size: 14px; color: #4b5563;">Реєстрація тільки через Gmail</p>
 
-          <div style="display:flex;gap:8px;align-items:center;margin-top:8px;">
-            <div id="googleSignIn" style="margin-top:0;"></div>
-          </div>
-        </form>
+          <label style="display: block; margin-bottom: 16px;">
+            <span style="display: block; font-size: 13px; font-weight: 500; margin-bottom: 4px;">ID викладача (опціонально)</span>
+            <input id="auth-teacher-id" type="text" placeholder="athletica401@gmail.com або ID викладача" style="width: 100%; box-sizing: border-box;" />
+          </label>
+
+          <div id="googleSignIn" style="min-height: 44px;"></div>
+        </div>
 
         <div id="auth-message" class="auth-message" aria-live="polite"></div>
       </section>
