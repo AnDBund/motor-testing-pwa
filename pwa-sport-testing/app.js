@@ -278,6 +278,7 @@ async function subscribeToFirestoreUsers() {
 }
 
 function setOnlineStatus() {
+  if (!elements.onlineStatus) return;
   const isOnline = navigator.onLine;
   elements.onlineStatus.textContent = isOnline ? 'Online' : 'Offline';
   elements.onlineStatus.classList.toggle('online', isOnline);
