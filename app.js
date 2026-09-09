@@ -1802,3 +1802,78 @@ async function initApp() {
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
+// Модуль секундоміра
+(function initStopwatch() {
+  let startTime = 0;
+  let elapsedTime = 0;
+  let timerInterval = null;
+  let lapCounter = 1;
+
+  const display = document.getElementById('stopwatch-display');
+  const startBtn = document.getElementById('stopwatch-start-btn');
+  const lapBtn = document.getElementById('stopwatch-lap-btn');
+  const resetBtn = document.getElementById('stopwatch-reset-btn');
+  const lapsContainer = document.getElementById('stopwatch-laps');
+
+  if (!display || !startBtn) return;
+
+  function formatTime(ms) {
+    const totalSeconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const centiseconds = Math.floor((ms % 1000) / 10);
+
+    const m = String(minutes).padStart(2, '0');
+    const s = String(seconds).padStart(2, '0');
+    const cs = String(centiseconds).padStart(2, '0');
+    return `${m}:${s}.${cs}`;
+  }
+
+  function update() {
+    const current = Date.now();
+    const diff = current - startTime + elapsedTime;
+    display.textContent = formatTime(diff);
+  }
+
+  startBtn.addEventListener('click', () => {
+    if (!timerInterval) {
+      startTime = Date.now();
+      timerInterval = setInterval(update, 20);
+      startBtn.textContent = 'Пауза';
+      startBtn.classList.replace('primary-btn', 'secondary-btn');
+      lapBtn.disabled = false;
+      resetBtn.disabled = false;
+    } else {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      elapsedTime += Date.now() - startTime;
+      startBtn.textContent = 'Продовжити';
+      startBtn.classList.replace('secondary-btn', 'primary-btn');
+      lapBtn.disabled = true;
+    }
+  });
+
+  lapBtn.addEventListener('click', () => {
+    if (!timerInterval) return;
+    const current = Date.now();
+    const diff = current - startTime + elapsedTime;
+    const lapItem = document.createElement('li');
+    lapItem.innerHTML = `<span>Коло ${lapCounter++}</span><span>${formatTime(diff)}</span>`;
+    lapsContainer.prepend(lapItem);
+  });
+
+  resetBtn.addEventListener('click', () => {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    startTime = 0;
+    elapsedTime = 0;
+    lapCounter = 1;
+    display.textContent = '00:00.00';
+    startBtn.textContent = 'Старт';
+    startBtn.classList.replace('secondary-btn', 'primary-btn');
+    lapBtn.disabled = true;
+    resetBtn.disabled = true;
+    lapsContainer.innerHTML = '';
+  });
+})();

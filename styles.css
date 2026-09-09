@@ -422,7 +422,7 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .task-item,
+.task-item,
   .student-item {
     width: 100%;
   }
@@ -431,4 +431,50 @@ textarea {
     width: 100%;
     justify-content: space-between;
   }
+}
+
+/* Стилі спортивного секундоміра */
+.stopwatch-card {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.stopwatch-display {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin: 16px 0;
+  letter-spacing: 1px;
+}
+
+.stopwatch-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.stopwatch-controls button {
+  min-width: 90px;
+}
+
+.stopwatch-laps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border-top: 1px solid #e5e7eb;
+}
+
+.stopwatch-laps li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  border-bottom: 1px solid #f3f4f6;
+  font-family: monospace;
 }
