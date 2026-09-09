@@ -14,7 +14,7 @@ const state = {
 };
 
 // Google OAuth client id (created in Google Cloud) — provided by user
-const GOOGLE_CLIENT_ID = '186905345243-kmllfrlqu222q9tjiejd3vfeuo1q4o1h.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = '695502870988-k877167dvdd1kdd2dsk6ebc1k0c7st4u.apps.googleusercontent.com';
 
 const elements = {
   authScreen: document.querySelector('#auth-screen'),
@@ -70,11 +70,31 @@ function setOnlineStatus() {
   elements.onlineStatus.classList.toggle('offline', !isOnline);
 }
 
-async function initFirebaseIfConfigured() {
+async function validateFirebaseConfig() {
   try {
     const fbConfig = await loadJson('./data/firebase-config.json');
-    if (!fbConfig || !fbConfig.apiKey) throw new Error('No firebase config');
+    if (!fbConfig) {
+      throw new Error('Firebase configuration file not found');
+    }
+    if (!fbConfig.apiKey) {
+      throw new Error('Критична помилка: Firebase конфігурація відсутня або пошкоджена на хостингу');
+    }
+    if (!fbConfig.projectId) {
+      throw new Error('Критична помилка: Firebase projectId відсутній');
+    }
+    if (!fbConfig.authDomain) {
+      throw new Error('Критична помилка: Firebase authDomain відсутній');
+    }
+    return fbConfig;
+  } catch (error) {
+    console.error('Firebase configuration error:', error.message);
+    throw error;
+  }
+}
 
+async function initFirebaseIfConfigured() {
+  try {
+    const fbConfig = await validateFirebaseConfig();
     // dynamic import of modular SDK
     const [{ initializeApp }, { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider }, { getFirestore, collection, doc, setDoc, onSnapshot, getDocs } ] = await Promise.all([
       import('https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js'),
@@ -481,12 +501,33 @@ async function handleAuthSubmit(event) {
           } catch (e) {}
         }
       }
-    } catch (authErr) {
-      console.warn('Firebase Auth error during handleAuthSubmit:', authErr);
+        } catch (authErr) {
+      console.error('Firebase Auth error during handleAuthSubmit:', authErr);
+
+      // Handle specific auth errors with user-friendly messages
+      if (authErr.code === 'auth/unauthorized-domain') {
+        showAuthMessage('Помилка: домен сайту не дозволений у Firebase Authentication. Додайте цей домен у консоль Firebase → Authentication → Sign-in method → Authorized domains.', true);
+        return;
+      }
       if (authErr.code === 'auth/wrong-password') {
         showAuthMessage('Невірний пароль для цього облікового запису.', true);
         return;
       }
+      if (authErr.code === 'auth/invalid-credential' || authErr.code === 'auth/user-not-found') {
+        showAuthMessage(`Помилка аутентіікації: ${authErr.message || 'користувач не знайдений.'}. Спробуйте ще раз або зверніться до адміністратора.`, true);
+        return;
+      }
+      if (authErr.code === 'auth/invalid-email') {
+        showAuthMessage('Невірний формат email адреси.', true);
+        return;
+      }
+      if (authErr.code === 'auth/too-many-requests') {
+        showAuthMessage('Забагато спроб входу. Спробуйте через кілька хвилин.', true);
+        return;
+      }
+      // Catch-all: show error and DO NOT fall through to mock/fallback mode
+      showAuthMessage(`Помилка Firebase Auth: ${authErr.message || 'невідома помилка'}. Спробуйте пізніше.`, true);
+      return;
     }
   }
 
@@ -1730,7 +1771,19 @@ async function initApp() {
   try {
     await initFirebaseIfConfigured();
   } catch (e) {
-    console.info('Firebase not configured or failed to initialize:', e && e.message);
+    console.error('Firebase not configured or failed to initialize:', e && e.message);
+    // Show critical error on screen
+    try {
+      const authMessage = document.querySelector('#auth-message');
+      if (authMessage) {
+        authMessage.textContent = (e && e.message) || 'Критична помилка: Firebase конфігурація відсутня або пошкоджена на хостингу';
+        authMessage.style.background = 'rgba(239,68,68,0.08)';
+        authMessage.style.borderColor = 'rgba(239,68,68,0.25)';
+        authMessage.style.color = '#b91c1c';
+      }
+    } catch (_) {
+      // Ignore DOM errors
+    }
   }
   await loadAppData();
   renderApplication();

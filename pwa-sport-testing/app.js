@@ -14,7 +14,7 @@ const state = {
 };
 
 // Google OAuth client id (created in Google Cloud) — provided by user
-const GOOGLE_CLIENT_ID = '186905345243-kmllfrlqu222q9tjiejd3vfeuo1q4o1h.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = '695502870988-k877167dvdd1kdd2dsk6ebc1k0c7st4u.apps.googleusercontent.com';
 
 const elements = {
   authScreen: document.querySelector('#auth-screen'),
